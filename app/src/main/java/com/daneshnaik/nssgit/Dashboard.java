@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Dashboard extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+public class Dashboard extends AppCompatActivity {
+    BottomNavigationView bottom_nav_dashboard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
