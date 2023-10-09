@@ -2,8 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item android:id="Chats"
        android:title="Chats"
+       android:enabled="true"
        android:icon="@drawable/baseline_message_24"/>
     <item android:title="DashBoard"
+
           android:id="@+id/courses"
           android:icon="@drawable/baseline_dashboard_24"/>
     <item android:title="Updates"
