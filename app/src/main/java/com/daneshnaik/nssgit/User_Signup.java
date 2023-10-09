@@ -78,7 +78,7 @@ public class User_Signup extends AppCompatActivity {
             }
         });
 
-if(checkbox_signup.isChecked()){
+
 
     signup_btn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -96,6 +96,7 @@ if(checkbox_signup.isChecked()){
                                      if(selectImage!=null){
 
                                         if(Password.equals(Confirm_password)){
+                                            if(checkbox_signup.isChecked()){
                                          auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                              @Override
                                              public void onComplete(@NonNull Task<AuthResult> task) {
@@ -184,6 +185,11 @@ if(checkbox_signup.isChecked()){
                                                  Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                              }
                                          });
+
+                                            }else {
+                                                Toast.makeText(User_Signup.this, "Do You Read Term s and Conditions?", Toast.LENGTH_SHORT).show();
+                                            }
+
                                         }else{
                                          Toast.makeText(User_Signup.this, "passwords Not Matching", Toast.LENGTH_SHORT).show();
                                         }
@@ -208,9 +214,7 @@ if(checkbox_signup.isChecked()){
         }
     });
 
-}else {
-    Toast.makeText(this, "Do You Read Term s and Conditions?", Toast.LENGTH_SHORT).show();
-}
+
 
 
 
