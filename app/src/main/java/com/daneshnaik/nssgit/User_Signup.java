@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -108,14 +109,29 @@ public class User_Signup extends AppCompatActivity {
                                                                                  String mobile_number=mobile_number_signup.getEditableText().toString().trim();
                                                                                  String password=password_signup.getEditableText().toString().trim();
                                                                                  Users users=new Users(uid,name,email,mobile_number,password,imageurl);
+                                                                                 progressDialog.setMessage(" See the Email and Verify");
                                                                                  database.getReference().child("Users").child(uid).setValue(users).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                                      @Override
                                                                                      public void onSuccess(Void unused) {
+                                                                                         new Handler().postDelayed(new Runnable() {
+                                                                                             @Override
+                                                                                             public void run() {
 
+                                                                                                 Toast.makeText(User_Signup.this, "All Data uploaded", Toast.LENGTH_SHORT).show();
+                                                                                                 progressDialog.setMessage("Just a Second please");
+                                                                                                 //sending_notification();
+                                                                                                 progressDialog.setMessage("All Data Uploaded");
+                                                                                                 progressDialog.dismiss();
+                                                                                                 Intent intent=new Intent(User_Signup.this,User_login_page.class);
+                                                                                                 startActivity(intent);
+                                                                                                 finish();
+                                                                                             }
+                                                                                         },2000);
                                                                                      }
                                                                                  }).addOnFailureListener(new OnFailureListener() {
                                                                                      @Override
                                                                                      public void onFailure(@NonNull Exception e) {
+                                                                                         progressDialog.dismiss();
                                                                                          Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                                                      }
                                                                                  });
@@ -124,6 +140,7 @@ public class User_Signup extends AppCompatActivity {
                                                                          }).addOnFailureListener(new OnFailureListener() {
                                                                              @Override
                                                                              public void onFailure(@NonNull Exception e) {
+                                                                                 progressDialog.dismiss();
                                                                                  Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                                              }
                                                                          });
@@ -132,6 +149,7 @@ public class User_Signup extends AppCompatActivity {
                                                              }).addOnFailureListener(new OnFailureListener() {
                                                                  @Override
                                                                  public void onFailure(@NonNull Exception e) {
+                                                                     progressDialog.dismiss();
                                                                      Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                                  }
                                                              });
@@ -139,6 +157,7 @@ public class User_Signup extends AppCompatActivity {
                                                      }).addOnFailureListener(new OnFailureListener() {
                                                          @Override
                                                          public void onFailure(@NonNull Exception e) {
+                                                             progressDialog.dismiss();
                                                              Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                          }
                                                      });
@@ -147,6 +166,7 @@ public class User_Signup extends AppCompatActivity {
                                          }).addOnFailureListener(new OnFailureListener() {
                                              @Override
                                              public void onFailure(@NonNull Exception e) {
+
                                                  Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                              }
                                          });
