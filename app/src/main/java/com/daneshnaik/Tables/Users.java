@@ -7,12 +7,25 @@ public class Users {
     String MobileNumber;
     String password;
 
+
+
+    String Imageurl;
+
     public Users(String id, String fullName, String email, String mobileNumber, String password) {
         this.id = id;
         FullName = fullName;
         Email = email;
         MobileNumber = mobileNumber;
         this.password = password;
+    }
+
+    public Users(String id, String fullName, String email, String mobileNumber, String password, String imageurl) {
+        this.id = id;
+        FullName = fullName;
+        Email = email;
+        MobileNumber = mobileNumber;
+        this.password = password;
+        Imageurl = imageurl;
     }
 
     public String getId() {
@@ -53,5 +66,12 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getImageurl() {
+        return Imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        Imageurl = imageurl;
     }
 }

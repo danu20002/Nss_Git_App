@@ -1,23 +1,34 @@
 package com.daneshnaik.nssgit;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
+import com.daneshnaik.Tables.Users;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class User_Signup extends AppCompatActivity {
-    TextInputEditText full_name,email_signup,password_signup,confirm_signup;
+    TextInputEditText full_name,email_signup,password_signup,confirm_signup,mobile_number_signup;
     CircleImageView profile_pic;
     AppCompatButton signup_btn;
     Uri selectImage;
@@ -32,6 +43,7 @@ public class User_Signup extends AppCompatActivity {
         setContentView(R.layout.activity_user_signup);
         full_name=findViewById(R.id.full_name_signup);
         email_signup=findViewById(R.id.email_signup);
+        mobile_number_signup=findViewById(R.id.mobile_num_signup);
         password_signup=findViewById(R.id.password_signup);
         confirm_signup=findViewById(R.id.confirm_signup);
         profile_pic=findViewById(R.id.profile_image_signup);
@@ -53,7 +65,114 @@ public class User_Signup extends AppCompatActivity {
         });
 
 
+    signup_btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            String FullName=full_name.getEditableText().toString().trim();
+            String Email=email_signup.getEditableText().toString().trim();
+            String Mobile_Number_signup=mobile_number_signup.getEditableText().toString().trim();
+            String Password=password_signup.getEditableText().toString().trim();
+            String Confirm_password=confirm_signup.getEditableText().toString().trim();
+              if(!FullName.isEmpty()){
+                     if(!Email.isEmpty()){
+                         if(!Mobile_Number_signup.isEmpty()){
+                             if(!Password.isEmpty()){
+                                 if(!Confirm_password.isEmpty()){
+                                     if(selectImage!=null){
 
+                                        if(Password.equals(Confirm_password)){
+                                         auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                             @Override
+                                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                                 if(task.isSuccessful()){
+                                                     final ProgressDialog progressDialog=new ProgressDialog(User_Signup.this);
+                                                     progressDialog.setTitle("Uploading");
+                                                     progressDialog.show();
+                                                     auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                         @Override
+                                                         public void onComplete(@NonNull Task<Void> task) {
+                                                             Toast.makeText(User_Signup.this, "User Created Successfully", Toast.LENGTH_SHORT).show();
+                                                             StorageReference reference=storage.getReference().child("profiles").child(auth.getUid());
+                                                             reference.putFile(selectImage).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                                                                 @Override
+                                                                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                                                                     if(task.isComplete()){
+                                                                         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                                             @Override
+                                                                             public void onSuccess(Uri uri) {
+                                                                                 String imageurl=uri.toString();
+                                                                                 String uid=auth.getUid();
+                                                                                 String name=full_name.getEditableText().toString().trim();
+
+                                                                                 String email=email_signup.getEditableText().toString().trim();
+                                                                                 String mobile_number=mobile_number_signup.getEditableText().toString().trim();
+                                                                                 String password=password_signup.getEditableText().toString().trim();
+                                                                                 Users users=new Users(uid,name,email,mobile_number,password,imageurl);
+                                                                                 database.getReference().child("Users").child(uid).setValue(users).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                                     @Override
+                                                                                     public void onSuccess(Void unused) {
+
+                                                                                     }
+                                                                                 }).addOnFailureListener(new OnFailureListener() {
+                                                                                     @Override
+                                                                                     public void onFailure(@NonNull Exception e) {
+                                                                                         Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                                     }
+                                                                                 });
+
+                                                                             }
+                                                                         }).addOnFailureListener(new OnFailureListener() {
+                                                                             @Override
+                                                                             public void onFailure(@NonNull Exception e) {
+                                                                                 Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                             }
+                                                                         });
+                                                                     }
+                                                                 }
+                                                             }).addOnFailureListener(new OnFailureListener() {
+                                                                 @Override
+                                                                 public void onFailure(@NonNull Exception e) {
+                                                                     Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                 }
+                                                             });
+                                                         }
+                                                     }).addOnFailureListener(new OnFailureListener() {
+                                                         @Override
+                                                         public void onFailure(@NonNull Exception e) {
+                                                             Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                         }
+                                                     });
+                                                 }
+                                             }
+                                         }).addOnFailureListener(new OnFailureListener() {
+                                             @Override
+                                             public void onFailure(@NonNull Exception e) {
+                                                 Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                             }
+                                         });
+                                        }else{
+                                         Toast.makeText(User_Signup.this, "passwords Not Matching", Toast.LENGTH_SHORT).show();
+                                        }
+                                     }else {
+                                         Toast.makeText(User_Signup.this, "Please select Image", Toast.LENGTH_SHORT).show();
+                                     }
+                                 }else{
+                                     confirm_signup.setError("Confirm Your password");
+                                 }
+                             }else{
+                                 password_signup.setError("Enter password");
+                             }
+                         }else{
+                             mobile_number_signup.setError("Enter Mobile Number");
+                         }
+                     }else{
+                         email_signup.setError("Enter Email");
+                     }
+              }else{
+                  full_name.setError("Enter Name");
+              }
+        }
+    });
 
 
 
