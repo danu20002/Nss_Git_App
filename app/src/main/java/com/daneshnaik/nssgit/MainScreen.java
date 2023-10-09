@@ -28,6 +28,8 @@ BottomNavigationView bottom_nav_chats;
 
 
 
+
+
         bottom_nav_chats=findViewById(R.id.bottom_nav_chats);
         bottom_nav_chats.setSelectedItemId(R.id.Chats);
         bottom_nav_chats.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

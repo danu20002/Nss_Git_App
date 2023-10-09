@@ -4,8 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BCC30A"
     tools:context=".updates">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/toolbar_updates"
+        app:title="Updates"
+        app:titleMarginStart="20dp"
+        app:logo="@drawable/baseline_update_24"
+        android:background="@color/Danu_color"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_nav_updates"
+        android:layout_below="@id/toolbar_updates">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+           <androidx.appcompat.widget.SearchView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:saveEnabled="true"
+               android:soundEffectsEnabled="true"
+               android:touchscreenBlocksFocus="false"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="10dp"
+               app:defaultQueryHint="Search Here"
+               android:id="@+id/searchview_updates"
+               app:iconifiedByDefault="false"
+               android:backgroundTint="@color/backgroundsetter"
+               android:background="@drawable/searchview_back"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:id="@+id/recyclerview_updates"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
