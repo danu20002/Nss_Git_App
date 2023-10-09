@@ -44,7 +44,7 @@ public class User_login_page extends AppCompatActivity {
                 String Password=password_login.getEditableText().toString().trim();
                 final ProgressDialog progressDialog=new ProgressDialog(User_login_page.this);
                 progressDialog.setTitle("Verifying");
-                progressDialog.setMessage("Are You Verified Mail?");
+                progressDialog.setMessage("Checking Verification Status");
                 progressDialog.show();
                 if(!Email_log.isEmpty()){
                     if(!Password.isEmpty()){
