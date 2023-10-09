@@ -33,10 +33,10 @@ public class User_login_page extends AppCompatActivity {
         login_btn=findViewById(R.id.login_btn);
         auth=FirebaseAuth.getInstance();
 
-//        if (auth.getCurrentUser()!=null && auth.getCurrentUser().isEmailVerified()){
-//            startActivity(new Intent(User_login_page.this,MainScreen.class));
-//            finish();
-//        }
+        if (auth.getCurrentUser()!=null && auth.getCurrentUser().isEmailVerified()){
+            startActivity(new Intent(User_login_page.this,MainScreen.class));
+            finish();
+        }
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
