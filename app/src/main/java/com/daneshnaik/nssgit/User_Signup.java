@@ -276,12 +276,6 @@ public class User_Signup extends AppCompatActivity {
                     "Hi!\n" +
                     "\n" +
                     "Welcome to NSS GIT app!.\n" +
-                    "\n" +
-                    "\n" +
-                    "Hi!\n" +
-                    "\n" +
-                    "Welcome to NSS GIT app!\n" +
-                    "\n" +
                     "Here you can get all the info about NSS GIT in one place. You can find the latest updates about NSS GIT, events, activities, and more.\n" +
                     "\n" +
                     "To get started, simply sign into the app with your NSS GIT account. Once you're logged in, you'll be able to explore all the features that NSS GIT has to offer.\n" +
