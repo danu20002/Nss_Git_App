@@ -34,7 +34,7 @@ public class User_login_page extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser()!=null && auth.getCurrentUser().isEmailVerified()){
-            startActivity(new Intent(User_login_page.this,MainScreen.class));
+            startActivity(new Intent(User_login_page.this,Dashboard.class));
             finish();
         }
         login_btn.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +57,7 @@ public class User_login_page extends AppCompatActivity {
                                     new Handler().postDelayed(new Runnable() {
                                         @Override
                                         public void run() {
-                                            Intent intent=new Intent(getApplicationContext(),MainScreen.class);
+                                            Intent intent=new Intent(getApplicationContext(),Dashboard.class);
                                             intent.putExtra("email",Email_log);
                                             startActivity(intent);
                                             finish();
