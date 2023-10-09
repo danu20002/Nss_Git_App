@@ -9,7 +9,10 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
         app:title="Chats"
-       android:background="@color/Danu_color"/>
+       android:background="@color/Danu_color">
+
+   </androidx.appcompat.widget.Toolbar>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -18,4 +21,5 @@
         app:menu="@menu/bottom_menu_items"
         android:id="@+id/bottom_nav_chats"
         />
+
 </RelativeLayout>
