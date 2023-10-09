@@ -16,14 +16,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="time"
+                android:text="gmail"
                 android:textIsSelectable="true"
                 android:paddingRight="7dp"
                 android:textAlignment="textEnd"
                 android:textStyle="bold"
                 android:textSize="15sp"
-
-                android:id="@+id/text_updates_date"/>
+                android:id="@+id/text_updates_gmail"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

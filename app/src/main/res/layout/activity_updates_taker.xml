@@ -1,9 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".updates_taker">
+    android:scrollbarStyle="insideInset"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:nestedScrollingEnabled="true"
+    android:scrollbars="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Updates"
+            android:textStyle="bold"
+            android:textColor="@color/Danu_color"
+            android:textSize="35sp"
+            android:textAlignment="center"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:hint="Title*"
+            android:layout_margin="5dp"
+            android:id="@+id/title_updates"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:maxLength="75"
+                android:inputType="textCapSentences|textMultiLine"
+                android:nestedScrollingEnabled="true"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="insideInset"
+                android:isScrollContainer="true"
+                android:textColor="#122AAF"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:hint="Description*"
+            android:layout_margin="5dp"
+            android:id="@+id/description_updates"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textAlignment="textStart"
+                android:nestedScrollingEnabled="true"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="insideInset"
+                android:inputType="textCapSentences|textMultiLine"
+                android:isScrollContainer="true"
+                android:textSize="15sp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:hint=" Your Email(.edu)"
+            android:layout_margin="5dp"
+            android:scrollbars="vertical"
+            android:id="@+id/email_updates"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:nestedScrollingEnabled="true"
+                android:inputType="textEmailAddress"
+                android:scrollbars="vertical"
+                android:isScrollContainer="true"
+                android:scrollbarStyle="insideInset"
+                android:singleLine="false"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Danu_color"
+            android:layout_margin="15dp"
+            android:text="Send Update"
+            android:layout_marginBottom="40dp"
+            android:textStyle="bold"
+            android:id="@+id/send_update_btn"/>
+
+    </LinearLayout>
+
+</ScrollView>

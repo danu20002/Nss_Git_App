@@ -42,7 +42,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="15dp"
                 android:id="@+id/recyclerview_updates"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -54,6 +54,7 @@
     android:layout_above="@id/bottom_nav_updates"
     android:layout_alignParentEnd="true"
     android:layout_margin="20dp"
+    android:visibility="gone"
     android:contentDescription="Floating action button updates"
     android:src="@drawable/baseline_add_24"
     android:id="@+id/floating_btn_update"/>
