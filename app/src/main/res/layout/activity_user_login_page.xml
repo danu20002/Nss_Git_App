@@ -16,7 +16,7 @@
             android:text="Welcome to NSS GIT"
             android:textSize="27sp"
             android:textStyle="bold"
-            android:textColor="#0288D1"
+            android:textColor="@color/black"
             android:textAlignment="textStart"
             android:layout_margin="20dp"
             />
@@ -112,18 +112,22 @@
     android:text="About Nss Git"
     android:layout_margin="20dp"
     android:textStyle="bold"
-    android:textColor="#303F9F"
+    android:textColor="@color/black"
     android:textSize="20sp"/>
+
     <TextView
+        android:id="@+id/text_new_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text="New Account?"
         android:textAlignment="textEnd"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:id="@+id/text_new_account"
-        android:textColor="#303F9F"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>
