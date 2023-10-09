@@ -8,8 +8,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -67,6 +69,13 @@ public class User_Signup extends AppCompatActivity {
         storage=FirebaseStorage.getInstance();
         database=FirebaseDatabase.getInstance();
 
+
+
+
+        if(Build.VERSION.SDK_INT>9){
+            StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
         profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,6 +244,9 @@ public class User_Signup extends AppCompatActivity {
 
     }
 
+
+
+
     public  void sending_notification(){
         String username="collagebuddy111@gmail.com";
         String password="rvorsglrrmacwhck";
@@ -298,11 +310,13 @@ public class User_Signup extends AppCompatActivity {
                     "The NSS GIT team");
 
 
-            Transport.send(message);
+          Transport.send(message);
 
         }catch (MessagingException e){
             throw new RuntimeException(e);
         }
 
     }
+
+
 }
