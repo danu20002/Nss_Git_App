@@ -151,7 +151,7 @@
                     android:linksClickable="true"
                     android:textColorLink="#0825DF"
                     android:autoLink="web"
-
+                     android:id="@+id/term_and_conditions_signup"
                     android:layout_marginLeft="50dp"
                     />
             <androidx.appcompat.widget.AppCompatButton
