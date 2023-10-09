@@ -83,6 +83,10 @@ public class User_Signup extends AppCompatActivity {
     signup_btn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            final ProgressDialog progressDialog=new ProgressDialog(User_Signup.this);
+            progressDialog.setTitle("Uploading");
+            progressDialog.setMessage("Compressing Data");
+            progressDialog.show();
             String FullName=full_name.getEditableText().toString().trim();
             String Email=email_signup.getEditableText().toString().trim();
             String Mobile_Number_signup=mobile_number_signup.getEditableText().toString().trim();
@@ -101,9 +105,7 @@ public class User_Signup extends AppCompatActivity {
                                              @Override
                                              public void onComplete(@NonNull Task<AuthResult> task) {
                                                  if(task.isSuccessful()){
-                                                     final ProgressDialog progressDialog=new ProgressDialog(User_Signup.this);
-                                                     progressDialog.setTitle("Uploading");
-                                                     progressDialog.show();
+
                                                      auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                                          @Override
                                                          public void onComplete(@NonNull Task<Void> task) {
@@ -187,7 +189,7 @@ public class User_Signup extends AppCompatActivity {
                                          });
 
                                             }else {
-                                                Toast.makeText(User_Signup.this, "Do You Read Term s and Conditions?", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(User_Signup.this, "Did You Read Terms and Conditions?", Toast.LENGTH_SHORT).show();
                                             }
 
                                         }else{
@@ -244,7 +246,7 @@ public class User_Signup extends AppCompatActivity {
         props.put("mail.smtp.SSL","465");
         props.put("mail.smtp.port","587");
 
-        Session session=Session.getInstance(props, new Authenticator() {
+       javax.mail.Session session=Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username,password);
@@ -255,29 +257,45 @@ public class User_Signup extends AppCompatActivity {
             MimeMessage message=new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipients(MimeMessage.RecipientType.TO,InternetAddress.parse(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
-            message.setSubject("Welcome to JobAvailableApp");
+            message.setSubject("Welcome to NSS GIT");
             message.setText("Dear" + "  "+FirebaseAuth.getInstance().getCurrentUser().getEmail()+"\n" +
 
                     "\n" +
-                    "Hi [user name],\n" +
+                    "Hi!\n" +
                     "\n" +
-                    "Welcome to JobAvailableApp We're so excited to have you on board.\n" +
+                    "Welcome to NSS GIT app!.\n" +
                     "\n" +
-                    "[App name] is a [app description] that helps you [list of benefits]. Whether you're looking to [benefit 1], [benefit 2], or [benefit 3], [app name] has you covered.\n" +
                     "\n" +
-                    "To get started, simply download the app from the [App Store or Google Play] and create an account. Once you're logged in, you can start exploring all that [app name] has to offer.\n" +
+                    "Hi!\n" +
                     "\n" +
-                    "Here are a few tips to help you get the most out of [app name]:\n" +
+                    "Welcome to NSS GIT app!\n" +
                     "\n" +
-                    "Explore the different features. Take some time to browse the app and learn about all the different things you can do with it. There are lots of hidden gems, so don't be afraid to experiment.\n" +
-                    "Customize your experience. [App name] allows you to tailor the experience to your specific needs and interests. Be sure to update your profile and settings so that you're getting the most out of the app.\n" +
-                    "Connect with other users. [App name] has a thriving community of users who are always happy to help and support each other. Join the forums or chat groups to connect with other people who are using [app name] for the same things you are.\n" +
-                    "We're always working to improve [app name], so please feel free to send us feedback or suggestions. You can reach us at [email address] or [social media links].\n" +
+                    "Here you can get all the info about NSS GIT in one place. You can find the latest updates about NSS GIT, events, activities, and more.\n" +
                     "\n" +
-                    "Thanks again for joining the [app name] community!\n" +
+                    "To get started, simply sign into the app with your NSS GIT account. Once you're logged in, you'll be able to explore all the features that NSS GIT has to offer.\n" +
                     "\n" +
-                    "Sincerely,\n" +
-                    "The [app name] team");
+                    "\n" +
+                    "Hi!\n" +
+                    "\n" +
+                    "Welcome to NSS GIT app!\n" +
+                    "\n" +
+                    "Here you can get all the info about NSS GIT in one place. You can find the latest updates about NSS GIT, events, activities, and more.\n" +
+                    "\n" +
+                    "To get started, simply sign into the app with your NSS GIT account. Once you're logged in, you'll be able to explore all the features that NSS GIT has to offer.\n" +
+                    "\n" +
+                    "Here are some of the great things you can do with the NSS GIT app:\n" +
+                    "\n" +
+                    "Get the latest news and updates about NSS GIT\n" +
+                    "Find out about upcoming events and activities\n" +
+                    "Register for events and activities\n" +
+                    "Connect with other NSS GIT students\n" +
+                    "Get help and support from NSS GIT staff.\n"+
+                    "\n" +
+                    "We hope you enjoy using the NSS GIT app!\n"+
+                    "If you have any questions or feedback, please feel free to contact us at nssgitofficial@gmail.com!\n" +
+                    "\n" +
+                    "Thank you,\n" +
+                    "The NSS GIT team");
 
 
             Transport.send(message);
