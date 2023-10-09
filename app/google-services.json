@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486204026745",
+    "project_id": "nss-git",
+    "storage_bucket": "nss-git.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486204026745:android:d150b7cf24190c7d15c9a8",
+        "android_client_info": {
+          "package_name": "com.daneshnaik.nssgit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGsbSojNyb9XMDwSqKIFEYR0f9MAy0GCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

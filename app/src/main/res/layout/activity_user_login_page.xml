@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User_login_page">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to NSS GIT"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:textColor="#0288D1"
+            android:textAlignment="textStart"
+            android:layout_margin="20dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textStyle="bold"
+                android:inputType="textEmailAddress"
+                android:drawableEnd="@drawable/baseline_email_24"
+                android:id="@+id/email_login"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            app:boxBackgroundMode="outline"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleContentDescription="Enter the strong password with capital letters"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textStyle="bold"
+                android:drawableEnd="@drawable/baseline_email_24"
+                android:id="@+id/password_login"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:text="Sign In"
+            android:id="@+id/login_btn"
+            android:background="@color/Danu_color"/>
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:layout_margin="20dp"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#303F9F"/>
+
+
+        <!--     <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--         android:layout_width="wrap_content"-->
+        <!--         android:layout_height="wrap_content"-->
+        <!--         android:layout_margin="20dp"-->
+        <!--         android:padding="5dp"-->
+        <!--         android:layout_gravity="center"-->
+        <!--         android:background="@drawable/searchview_back"-->
+        <!--         android:orientation="horizontal">-->
+        <!--         <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--             android:layout_width="40dp"-->
+        <!--             android:layout_height="40dp"-->
+        <!--             android:src="@drawable/google_logo"-->
+        <!--              >-->
+        <!--         </de.hdodenhof.circleimageview.CircleImageView>-->
+        <!--         <TextView-->
+        <!--             android:layout_width="wrap_content"-->
+        <!--             android:layout_height="wrap_content"-->
+        <!--             android:layout_gravity="center"-->
+        <!--             android:textSize="20sp"-->
+        <!--             android:textStyle="bold"-->
+        <!--              android:text="Login with Google"/>-->
+        <!--     </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:text="About Nss Git"
+    android:layout_margin="20dp"
+    android:textStyle="bold"
+    android:textColor="#303F9F"
+    android:textSize="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Account?"
+        android:textAlignment="textEnd"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:id="@+id/text_new_account"
+        android:textColor="#303F9F"/>
+
+</RelativeLayout>
