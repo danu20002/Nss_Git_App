@@ -10,7 +10,8 @@
        android:layout_height="wrap_content"
         app:title="Chats"
 
-       android:background="@color/Danu_color">
+        android:background="#E87C0E"
+       >
 
    </androidx.appcompat.widget.Toolbar>
 
