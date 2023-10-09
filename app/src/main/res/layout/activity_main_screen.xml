@@ -9,9 +9,9 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
         app:title="Chats"
-
-        android:background="#E87C0E"
-       >
+        app:logo="@drawable/baseline_message_24"
+        android:padding="10dp"
+          android:background="@color/default_theme">
 
    </androidx.appcompat.widget.Toolbar>
 

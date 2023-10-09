@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Danu_color">#8692F7</color>
     <color name="backgroundsetter">#142176FF</color>
+    <color name="default_theme">#8258fa</color>
 </resources>
