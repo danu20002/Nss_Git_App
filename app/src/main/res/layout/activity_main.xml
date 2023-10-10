@@ -11,7 +11,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/nsslogo">
+        android:src="@drawable/nss_logon">
 
     </de.hdodenhof.circleimageview.CircleImageView>
     <TextView

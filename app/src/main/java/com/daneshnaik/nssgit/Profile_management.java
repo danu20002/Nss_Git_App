@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -25,6 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Profile_management extends AppCompatActivity {
     BottomNavigationView bottom_nav_profile_management;
     CircleImageView profile_photo_settings;
+    TextView profile_settings_changer;
     FirebaseDatabase database;
     FirebaseAuth auth;
     @Override
@@ -49,7 +52,14 @@ public class Profile_management extends AppCompatActivity {
             }
         });
 
-
+ profile_settings_changer=findViewById(R.id.profile_settings_changer);
+ profile_settings_changer.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View view) {
+         startActivity(new Intent(getApplicationContext(), Profile_settings.class));
+         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+     }
+ });
 
 
 

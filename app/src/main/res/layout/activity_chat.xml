@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundsetter"
+    android:background="@drawable/chat_background_image"
+
     android:orientation="vertical"
     tools:context=".chat">
 
@@ -12,7 +13,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700"
+        android:background="@color/default_theme"
         tools:ignore="MissingConstraints">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -35,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="horizontal"
                 android:singleLine="true"
+                android:textColor="@color/black"
                 android:text="Danesh Naik"
                 android:textSize="15sp"
                 android:textStyle="bold">
@@ -46,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:textColor="@color/black"
                 android:text="naikdanesh2@gmail.com"
                 android:textAlignment="textStart"
                 android:textSize="12sp"
