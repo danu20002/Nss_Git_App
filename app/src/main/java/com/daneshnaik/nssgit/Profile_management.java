@@ -27,7 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Profile_management extends AppCompatActivity {
     BottomNavigationView bottom_nav_profile_management;
     CircleImageView profile_photo_settings;
-    TextView profile_settings_changer;
+    TextView profile_settings_changer,group_belongs_to,help_section_settings,logout_settings;
     FirebaseDatabase database;
     FirebaseAuth auth;
     @Override
@@ -60,6 +60,118 @@ public class Profile_management extends AppCompatActivity {
          overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
      }
  });
+
+ group_belongs_to=findViewById(R.id.group_belongs_to);
+ group_belongs_to.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View view) {
+        startActivity(new Intent(getApplicationContext(), Group_belong_to.class));
+     }
+ });
+
+
+ help_section_settings=findViewById(R.id.help_section_settings);
+ help_section_settings.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View view) {
+         startActivity(new Intent(getApplicationContext(), Help_section.class));
+     }
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ logout_settings=findViewById(R.id.logout_settings);
+ logout_settings.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View view) {
+         AlertDialog.Builder dialog=new AlertDialog.Builder(Profile_management.this);
+         dialog.setTitle("Log Out").setIcon(R.drawable.baseline_logout_24).setMessage("Are you sure! Want to Log Out?").setPositiveButton("YES", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialogInterface, int i) {
+                 auth.signOut();
+                 startActivity(new Intent(getApplicationContext(),User_login_page.class));
+                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                 finish();
+             }
+         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialogInterface, int i) {
+                 Toast.makeText(Profile_management.this, "Sure Sure", Toast.LENGTH_SHORT).show();
+             }
+         });
+         dialog.show();
+     }
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -15,6 +15,12 @@
         android:theme="@style/Theme.NssGit"
         tools:targetApi="31">
         <activity
+            android:name=".Help_section"
+            android:exported="false" />
+        <activity
+            android:name=".Group_belong_to"
+            android:exported="false" />
+        <activity
             android:name=".Profile_settings"
             android:exported="false" />
         <activity

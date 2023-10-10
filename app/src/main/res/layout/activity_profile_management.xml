@@ -81,7 +81,7 @@
                <TextView
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="Group Belongs to"
+                  android:text="Group Belongs To"
                   android:textColor="@color/black"
                   android:textStyle="bold"
                   android:textSize="20sp"
@@ -188,6 +188,7 @@
                           android:textColor="@color/black"
                           android:textStyle="bold"
                           android:textSize="20sp"
+                          android:id="@+id/help_section_settings"
                           android:background="?attr/selectableItemBackground"
                           android:drawableEnd="@drawable/baseline_help_24"
                           android:padding="5dp"
@@ -383,6 +384,7 @@
                   android:layout_height="wrap_content"
                   android:text="Logout"
                   android:textSize="15sp"
+
                   android:textStyle="italic"
                   android:textAlignment="textStart"
                   />
@@ -390,6 +392,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="Log out"
+              android:id="@+id/logout_settings"
               android:textColor="@color/black"
               android:textStyle="bold"
               android:textSize="20sp"
