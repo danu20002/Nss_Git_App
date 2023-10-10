@@ -40,7 +40,7 @@ public class Profile_management extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String profile_image_settings=snapshot.child("imageurl").getValue().toString();
-                Glide.with(getApplicationContext()).load(profile_image_settings).into(profile_photo_settings);
+                Glide.with(getApplicationContext()).load(profile_image_settings).placeholder(R.drawable.baseline_person_24).into(profile_photo_settings);
             }
 
             @Override
