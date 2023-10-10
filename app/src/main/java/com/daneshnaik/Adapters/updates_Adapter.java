@@ -1,4 +1,4 @@
-package com.daneshnaik;
+package com.daneshnaik.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

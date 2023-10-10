@@ -9,6 +9,7 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
         app:title="Chats"
+       android:id="@+id/toolbar_mainscreen"
         app:logo="@drawable/baseline_message_24"
         android:padding="10dp"
           android:background="@color/default_theme">
@@ -16,12 +17,51 @@
    </androidx.appcompat.widget.Toolbar>
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+<androidx.appcompat.widget.SearchView
+android:id="@+id/serach_bar_user"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/toolbar_mainscreen"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="8dp"
+android:layout_marginEnd="10dp"
+
+android:background="@drawable/searchview_back"
+android:backgroundTint="@color/backgroundsetter"
+app:iconifiedByDefault="false"
+app:queryHint="Search User Here..." />
+<FrameLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/framelayout"
+android:layout_below="@+id/serach_bar_user"
+android:layout_above="@id/bottom_nav_chats">
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:scrollbars="vertical"
+    android:scrollbarThumbVertical="@android:color/darker_gray"
+    android:scrollbarSize="3dp"
+    android:id="@+id/recyclerview_main"/>
+   </FrameLayout>
+
+
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu_items"
         android:id="@+id/bottom_nav_chats"
         />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress_mainscreen"
+        android:visibility="gone"/>
 
 </RelativeLayout>

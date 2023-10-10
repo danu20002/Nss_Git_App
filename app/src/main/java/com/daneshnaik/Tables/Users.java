@@ -11,13 +11,11 @@ public class Users {
 
     String Imageurl;
 
-    public Users(String id, String fullName, String email, String mobileNumber, String password) {
-        this.id = id;
-        FullName = fullName;
-        Email = email;
-        MobileNumber = mobileNumber;
-        this.password = password;
-    }
+
+
+    String Lastmessage;
+
+
 
     public Users(String id, String fullName, String email, String mobileNumber, String password, String imageurl) {
         this.id = id;
@@ -26,6 +24,9 @@ public class Users {
         MobileNumber = mobileNumber;
         this.password = password;
         Imageurl = imageurl;
+    }
+
+    public Users() {
     }
 
     public String getId() {
@@ -73,5 +74,12 @@ public class Users {
 
     public void setImageurl(String imageurl) {
         Imageurl = imageurl;
+    }
+    public String getLastmessage() {
+        return Lastmessage;
+    }
+
+    public void setLastmessage(String lastmessage) {
+        Lastmessage = lastmessage;
     }
 }

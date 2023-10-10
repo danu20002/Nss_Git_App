@@ -13,7 +13,7 @@
         app:title="Updates"
         app:titleMarginStart="20dp"
         app:logo="@drawable/baseline_update_24"
-        android:background="@color/Danu_color"/>
+        android:background="@color/default_theme"/>
 
     <FrameLayout
         android:layout_width="match_parent"

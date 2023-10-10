@@ -199,28 +199,36 @@ public class User_Signup extends AppCompatActivity {
 
                                             }else {
                                                 Toast.makeText(User_Signup.this, "Did You Read Terms and Conditions?", Toast.LENGTH_SHORT).show();
+                                                progressDialog.dismiss();
                                             }
 
                                         }else{
                                          Toast.makeText(User_Signup.this, "passwords Not Matching", Toast.LENGTH_SHORT).show();
+                                            progressDialog.dismiss();
                                         }
                                      }else {
                                          Toast.makeText(User_Signup.this, "Please select Image", Toast.LENGTH_SHORT).show();
+                                         progressDialog.dismiss();
                                      }
                                  }else{
                                      confirm_signup.setError("Confirm Your password");
+                                     progressDialog.dismiss();
                                  }
                              }else{
                                  password_signup.setError("Enter password");
+                                 progressDialog.dismiss();
                              }
                          }else{
                              mobile_number_signup.setError("Enter Mobile Number");
+                             progressDialog.dismiss();
                          }
                      }else{
                          email_signup.setError("Enter Email");
+                         progressDialog.dismiss();
                      }
               }else{
                   full_name.setError("Enter Name");
+                  progressDialog.dismiss();
               }
         }
     });
@@ -248,8 +256,8 @@ public class User_Signup extends AppCompatActivity {
 
 
     public  void sending_notification(){
-        String username="collagebuddy111@gmail.com";
-        String password="rvorsglrrmacwhck";
+        String username="nssgitofficial@gmail.com";
+        String password="mgscxgqmxsdgzygo";
         Properties props=new Properties();
         props.put("mail.smtp.auth","true");
         props.put("mail.smtp.SSL","true");
@@ -271,16 +279,6 @@ public class User_Signup extends AppCompatActivity {
             message.setRecipients(MimeMessage.RecipientType.TO,InternetAddress.parse(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
             message.setSubject("Welcome to NSS GIT");
             message.setText("Dear" + "  "+FirebaseAuth.getInstance().getCurrentUser().getEmail()+"\n" +
-
-                    "\n" +
-                    "Hi!\n" +
-                    "\n" +
-                    "Welcome to NSS GIT app!.\n" +
-                    "Here you can get all the info about NSS GIT in one place. You can find the latest updates about NSS GIT, events, activities, and more.\n" +
-                    "\n" +
-                    "To get started, simply sign into the app with your NSS GIT account. Once you're logged in, you'll be able to explore all the features that NSS GIT has to offer.\n" +
-                    "\n" +
-                    "\n" +
                     "Hi!\n" +
                     "\n" +
                     "Welcome to NSS GIT app!\n" +

@@ -52,7 +52,7 @@ public class User_login_page extends AppCompatActivity {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 if(auth.getCurrentUser().isEmailVerified()){
-                                    progressDialog.setTitle("Good! Verified");
+
                                     progressDialog.setMessage("Verified SuccessFully");
                                     new Handler().postDelayed(new Runnable() {
                                         @Override

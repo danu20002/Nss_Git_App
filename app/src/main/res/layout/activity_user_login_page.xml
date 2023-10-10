@@ -67,7 +67,7 @@
             android:textSize="15sp"
             android:text="Sign In"
             android:id="@+id/login_btn"
-            android:background="@color/Danu_color"/>
+            android:background="@color/danu_color"/>
         <TextView
             android:id="@+id/forgot_password"
             android:layout_width="match_parent"

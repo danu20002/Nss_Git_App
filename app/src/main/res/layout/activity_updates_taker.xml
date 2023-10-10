@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:text="Send Updates"
             android:textStyle="bold"
-            android:textColor="@color/Danu_color"
+            android:textColor="@color/danu_color"
             android:textSize="35sp"
             android:textAlignment="center"/>
 
@@ -101,7 +101,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/Danu_color"
+            android:background="@color/danu_color"
             android:layout_margin="15dp"
             android:text="Send Update"
             android:layout_marginBottom="40dp"

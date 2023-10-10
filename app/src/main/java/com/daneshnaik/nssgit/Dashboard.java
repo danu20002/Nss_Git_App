@@ -1,23 +1,62 @@
 package com.daneshnaik.nssgit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 public class Dashboard extends AppCompatActivity {
     BottomNavigationView bottom_nav_dashboard;
+    FirebaseRemoteConfig remoteConfig;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
 
+
+
+
+
+
+
+
+
+
+        remoteConfig=FirebaseRemoteConfig.getInstance();
+        FirebaseRemoteConfigSettings configSettings=new FirebaseRemoteConfigSettings.Builder()
+                .setMinimumFetchIntervalInSeconds(5)
+                .build();
+        remoteConfig.setConfigSettingsAsync(configSettings);
+
+        remoteConfig.fetchAndActivate().addOnCompleteListener(new OnCompleteListener<Boolean>() {
+            @Override
+            public void onComplete(@NonNull Task<Boolean> task) {
+                if (task.isSuccessful()){
+                    String new_version_Code=remoteConfig.getString("new_version_code");
+
+                    if(Integer.parseInt(new_version_Code) > getCurrentVersioncode()){
+                        showUpdateDialog();
+                    }
+
+                }
+            }
+        });
 
 
 
@@ -53,4 +92,53 @@ public class Dashboard extends AppCompatActivity {
             }
         });
     }
+    private void showUpdateDialog() {
+        final AlertDialog dialog=new AlertDialog.Builder(Dashboard.this).setTitle("Update App").setMessage("New App version Available size:1.7MB").setPositiveButton("Update", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                try{
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.daneshnaik.nssgit")));
+                }catch (Exception e){
+                    Toast.makeText(Dashboard.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(),"ok new features discarded",Toast.LENGTH_LONG).show();
+            }
+        }).show();
+
+    }
+
+    private int getCurrentVersioncode(){
+        PackageInfo packageInfo=null;
+        try{
+            packageInfo= getPackageManager().getPackageInfo(getPackageName(),0);
+
+        }catch (Exception e){
+            Toast.makeText(this, "Not working", Toast.LENGTH_SHORT).show();
+        }
+        return packageInfo.versionCode;
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alertDialog=new AlertDialog.Builder(Dashboard.this).setIcon(R.drawable.baseline_logout_24).setTitle("Exit the app").setMessage("Are you sure! want to exit app?")
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Dashboard.super.onBackPressed();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(Dashboard.this, "Ok Fine️", Toast.LENGTH_SHORT).show();
+                    }
+                }).setCancelable(true);
+        alertDialog.show();
+
+    }
+
 }
