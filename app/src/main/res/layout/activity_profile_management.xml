@@ -4,8 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B6780F"
+    android:background="@color/backgroundsetter"
     tools:context=".Profile_management">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_theme"
+        app:title="Profile Management"
+        app:titleMarginStart="20dp"
+        android:id="@+id/toolbar_profile"
+        app:logo="@drawable/baseline_person_24">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_margin="8dp"
+            android:src="@drawable/baseline_person_24"
+            app:civ_border_overlay="true"
+            app:civ_border_width="2dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+     android:layout_above="@id/bottom_nav_profile_management"
+      android:layout_below="@id/toolbar_profile">
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <androidx.appcompat.widget.LinearLayoutCompat
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Profile Settings"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="25sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_person_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+                  <View
+                      android:layout_width="match_parent"
+                      android:layout_height="2dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="12dp"
+                      android:layout_margin="12dp"
+                      android:background="@android:color/black" />
+
+          </androidx.appcompat.widget.LinearLayoutCompat>
+      </ScrollView>
+
+  </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
