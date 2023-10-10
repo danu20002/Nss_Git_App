@@ -126,7 +126,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder alertDialog=new AlertDialog.Builder(Dashboard.this).setIcon(R.drawable.baseline_logout_24).setTitle("Exit the app").setMessage("Are you sure! want to exit app?")
-                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Dashboard.super.onBackPressed();

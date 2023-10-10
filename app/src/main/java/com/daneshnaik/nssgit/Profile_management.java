@@ -100,7 +100,7 @@ public class Profile_management extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder alertDialog=new AlertDialog.Builder(Profile_management.this).setIcon(R.drawable.baseline_logout_24).setTitle("Exit the app").setMessage("Are you sure! want to exit app?")
-                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Profile_management.super.onBackPressed();
