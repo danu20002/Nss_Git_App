@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NssGit"
         tools:targetApi="31">
         <activity
+            android:name=".Profile_settings"
+            android:exported="false" />
+        <activity
             android:name=".chat"
             android:exported="false" />
         <activity

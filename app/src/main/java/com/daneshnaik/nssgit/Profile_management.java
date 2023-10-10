@@ -11,15 +11,46 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile_management extends AppCompatActivity {
     BottomNavigationView bottom_nav_profile_management;
+    CircleImageView profile_photo_settings;
+    FirebaseDatabase database;
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_management);
+
+        database=FirebaseDatabase.getInstance();
+        auth=FirebaseAuth.getInstance();
+        profile_photo_settings=findViewById(R.id.profile_toolbar_settings);
+
+        database.getReference().child("Users").child(auth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String profile_image_settings=snapshot.child("imageurl").getValue().toString();
+                Glide.with(getApplicationContext()).load(profile_image_settings).into(profile_photo_settings);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
 
 
 
