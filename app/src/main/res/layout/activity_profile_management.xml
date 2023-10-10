@@ -56,6 +56,25 @@
                       android:layout_marginBottom="12dp"
                       android:layout_margin="12dp"
                       android:background="@android:color/black" />
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Profile Settings"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="25sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_person_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:layout_marginTop="12dp"
+                  android:layout_marginBottom="12dp"
+                  android:layout_margin="12dp"
+                  android:background="@android:color/black" />
 
           </androidx.appcompat.widget.LinearLayoutCompat>
       </ScrollView>
