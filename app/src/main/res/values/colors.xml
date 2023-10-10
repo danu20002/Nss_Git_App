@@ -11,4 +11,5 @@
     <color name="backgroundsetter">#142176FF</color>
     <color name="themesetter">#2176ff</color>
     <color name="default_theme">#8258fa</color>
+    <color name="red">#F60606</color>
 </resources>

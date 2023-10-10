@@ -1,5 +1,6 @@
 package com.daneshnaik.nssgit;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -215,6 +216,36 @@ FirebaseStorage storage;
             }
         });
 
+        password_change_profile_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              AlertDialog.Builder dialog=new AlertDialog.Builder(Profile_settings.this);
+              dialog.setTitle("Update password").setIcon(R.drawable.baseline_lock_24).setMessage("Are you sure want to update password").setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialogInterface, int i) {
+                      FirebaseAuth.getInstance().sendPasswordResetEmail(FirebaseAuth.getInstance().getCurrentUser().getEmail()).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                          @Override
+                          public void onComplete(@NonNull Task<Void> task) {
+                              password_change_profile_settings.setText("Check your Email");
+                              password_change_profile_settings.setTextColor(getResources().getColor(R.color.red));
+                          }
+                      }).addOnFailureListener(new OnFailureListener() {
+                          @Override
+                          public void onFailure(@NonNull Exception e) {
+                              Toast.makeText(Profile_settings.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                          }
+                      });
+                  }
+              }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialogInterface, int i) {
+                      Toast.makeText(Profile_settings.this, "WEll WEll", Toast.LENGTH_SHORT).show();
+                  }
+              });
+              dialog.show();
+            }
+        });
 
 
 
