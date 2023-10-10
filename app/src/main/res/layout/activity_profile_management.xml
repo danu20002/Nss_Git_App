@@ -43,7 +43,7 @@
                   android:text="Profile Settings"
                   android:textColor="@color/black"
                   android:textStyle="bold"
-                  android:textSize="25sp"
+                  android:textSize="20sp"
                   android:background="?attr/selectableItemBackground"
                   android:drawableEnd="@drawable/baseline_person_24"
                   android:padding="5dp"
@@ -51,30 +51,258 @@
               </TextView>
                   <View
                       android:layout_width="match_parent"
-                      android:layout_height="2dp"
-                      android:layout_marginTop="12dp"
-                      android:layout_marginBottom="12dp"
-                      android:layout_margin="12dp"
+                      android:layout_height="1dp"
+                      android:layout_marginLeft="12dp"
+                      android:layout_marginRight="12dp"
+
                       android:background="@android:color/black" />
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="Profile Settings"
+                  android:text="Group Belongs to"
                   android:textColor="@color/black"
                   android:textStyle="bold"
-                  android:textSize="25sp"
+                  android:textSize="20sp"
                   android:background="?attr/selectableItemBackground"
-                  android:drawableEnd="@drawable/baseline_person_24"
+                  android:drawableEnd="@drawable/baseline_groups_24"
                   android:padding="5dp"
                   android:layout_margin="10dp">
               </TextView>
               <View
                   android:layout_width="match_parent"
-                  android:layout_height="2dp"
-                  android:layout_marginTop="12dp"
-                  android:layout_marginBottom="12dp"
-                  android:layout_margin="12dp"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+
+                  android:background="@android:color/black"/>
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="About Program Officer"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_person_4_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+
+
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+
                   android:background="@android:color/black" />
+              <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="About RedCross"
+              android:textColor="@color/black"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:background="?attr/selectableItemBackground"
+              android:drawableEnd="@drawable/baseline_add_24"
+              android:padding="5dp"
+              android:layout_margin="10dp">
+          </TextView>
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginLeft="12dp"
+              android:layout_marginRight="12dp"
+
+              android:background="@android:color/black" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Help?"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_help_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+
+                  android:background="@android:color/black" />
+              <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Raise Query"
+              android:textColor="@color/black"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:background="?attr/selectableItemBackground"
+              android:drawableEnd="@drawable/baseline_query_stats_24"
+              android:padding="5dp"
+              android:layout_margin="10dp">
+          </TextView>
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginLeft="12dp"
+              android:layout_marginRight="12dp"
+
+              android:background="@android:color/black" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Privacy and policy"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_security_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+
+                  android:background="@android:color/black" />
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Log out"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_logout_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+
+                  android:background="@android:color/black" />
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Bug Reports"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_bug_report_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+                  android:background="@android:color/black" />
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Patch Notes"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:background="?attr/selectableItemBackground"
+                  android:drawableEnd="@drawable/baseline_note_alt_24"
+                  android:padding="5dp"
+                  android:layout_margin="10dp">
+              </TextView>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginLeft="12dp"
+                  android:layout_marginRight="12dp"
+                  android:background="@android:color/black" />
+              <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="App Version:1.0"
+              android:textColor="@color/black"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:background="?attr/selectableItemBackground"
+              android:drawableEnd="@drawable/baseline_app_shortcut_24"
+              android:padding="5dp"
+              android:layout_margin="10dp">
+          </TextView>
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginLeft="12dp"
+              android:layout_marginRight="12dp"
+              android:background="@android:color/black" />
+              <androidx.cardview.widget.CardView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:cardElevation="10dp"
+                  android:layout_margin="20dp"
+                  app:cardCornerRadius="7dp">
+                  <androidx.appcompat.widget.LinearLayoutCompat
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+
+                      android:orientation="vertical">
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textStyle="bold"
+                          android:textSize="20sp"
+                          android:text="Social Media Handlings"
+                          android:textAlignment="center">
+                      </TextView>
+                      <androidx.appcompat.widget.LinearLayoutCompat
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:gravity="center"
+                          android:orientation="horizontal">
+                          <ImageView
+                          android:layout_width="60dp"
+                          android:layout_height="60dp"
+                              android:layout_margin="10dp"
+                          android:src="@drawable/baseline_person_4_24">
+                      </ImageView>
+                          <ImageView
+                              android:layout_width="60dp"
+                              android:layout_height="60dp"
+                              android:layout_margin="10dp"
+                              android:src="@drawable/baseline_person_4_24">
+                          </ImageView>
+                          <ImageView
+                              android:layout_width="60dp"
+                              android:layout_height="60dp"
+                              android:layout_margin="10dp"
+                              android:src="@drawable/baseline_person_4_24">
+                          </ImageView>
+                          <ImageView
+                              android:layout_width="60dp"
+                              android:layout_height="60dp"
+                              android:layout_margin="10dp"
+                              android:src="@drawable/baseline_person_4_24">
+                          </ImageView>
+                      </androidx.appcompat.widget.LinearLayoutCompat>
+                  </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+              </androidx.cardview.widget.CardView>
+
+
 
           </androidx.appcompat.widget.LinearLayoutCompat>
       </ScrollView>
