@@ -27,7 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Profile_management extends AppCompatActivity {
     BottomNavigationView bottom_nav_profile_management;
     CircleImageView profile_photo_settings;
-    TextView profile_settings_changer,group_belongs_to,help_section_settings,logout_settings;
+    TextView profile_settings_changer,group_belongs_to,help_section_settings,privacy_policy_settings,contact_developer_settings,logout_settings;
     FirebaseDatabase database;
     FirebaseAuth auth;
     @Override
@@ -78,9 +78,22 @@ public class Profile_management extends AppCompatActivity {
      }
  });
 
+privacy_policy_settings=findViewById(R.id.privacy_policy_settings);
+privacy_policy_settings.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getApplicationContext(), Privacy_policy.class));
+    }
+});
 
 
-
+contact_developer_settings=findViewById(R.id.contact_developer_settings);
+contact_developer_settings.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getApplicationContext(), Contact_developer.class));
+    }
+});
 
 
 

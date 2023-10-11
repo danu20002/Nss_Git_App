@@ -40,6 +40,7 @@
                 android:hint="Help Title"
                 android:maxLines="4"
                 android:maxLength="80"
+                android:id="@+id/help_title"
                 android:drawableEnd="@drawable/baseline_help_24"
                 android:inputType="text|textMultiLine"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description"
+                android:id="@+id/help_description"
                 android:drawableEnd="@drawable/baseline_edit_calendar_24"
                 android:inputType="text|textMultiLine"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,6 +61,7 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="Submit"
+       android:id="@+id/help_submit_btn"
        android:layout_margin="20dp"
        android:background="@drawable/btn_background"/>
 
