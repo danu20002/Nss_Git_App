@@ -86,6 +86,11 @@
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:hint="Email"
+                       android:clickable="false"
+                       android:textIsSelectable="false"
+                       android:focusable="false"
+                       android:cursorVisible="false"
+                       android:id="@+id/email_contact_developer"
                        android:drawableEnd="@drawable/baseline_email_24"
                        android:inputType="textEmailAddress"
                        android:textStyle="bold">
@@ -100,6 +105,7 @@
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:hint="Anything to Tell"
+                       android:id="@+id/description_contact_developer"
                        android:drawableEnd="@drawable/baseline_edit_calendar_24"
                        android:inputType="text|textMultiLine"
                        android:textStyle="bold">
@@ -109,6 +115,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_margin="20dp"
+                   android:id="@+id/btn_submit_contact_developer"
                    android:background="@drawable/btn_background"
                    android:text="Submit"/>
 
@@ -134,25 +141,34 @@
            <androidx.appcompat.widget.LinearLayoutCompat
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:gravity="center"
                android:orientation="horizontal">
                <ImageView
                    android:layout_width="50dp"
                    android:layout_height="50dp"
                    android:layout_margin="15dp"
+                   android:id="@+id/github_developer"
                    android:src="@drawable/github_logo"/>
                <ImageView
                    android:layout_width="60dp"
                    android:layout_height="60dp"
                    android:src="@drawable/instagram"
+                   android:id="@+id/instagram_developer"
                    android:layout_margin="15dp"/>
                <ImageView
                android:layout_width="40dp"
                android:layout_height="50dp"
                android:src="@drawable/x_images"
-               android:layout_margin="15dp"/>
+               android:layout_marginLeft="15dp"
+                   android:layout_marginRight="15dp"
+                   android:id="@+id/x_developer"
+                   android:layout_marginBottom="20dp"
+                   android:layout_marginTop="20dp"/>
                <ImageView
                    android:layout_width="70dp"
                    android:layout_height="70dp"
+                   android:id="@+id/linkedin_developer"
                    android:src="@drawable/linked_in_logo"
                    android:layout_margin="15dp"/>
            </androidx.appcompat.widget.LinearLayoutCompat>

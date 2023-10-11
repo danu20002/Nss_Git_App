@@ -159,9 +159,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:background="@color/danu_color"
+                android:background="@drawable/another_btn_background"
                 android:textSize="20sp"
-                android:textStyle="bold"
+
                 android:id="@+id/signup_btn"
                 android:text="Sign Up"
                 />
