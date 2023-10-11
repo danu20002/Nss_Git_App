@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/default_theme"
     tools:context=".Contact_developer">
 <ScrollView
     android:layout_width="match_parent"
@@ -12,7 +13,155 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-       
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Contact Developer"
+           android:textAlignment="center"
+           android:layout_margin="20dp"
+           android:textColor="@color/black"
+           android:textStyle="bold"
+           android:textSize="25sp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="20dp"
+            app:cardElevation="15dp">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#F57C00"
+                    android:textAlignment="textStart"
+                    android:text="Hey! This is Developer..... "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_developer"
+                    android:textAlignment="textStart"
+                    android:layout_gravity="start"
+                    android:textStyle="normal"
+                    android:gravity="start"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:cardElevation="15dp"
+           app:cardCornerRadius="8dp"
+           android:layout_margin="20dp">
+           <androidx.appcompat.widget.LinearLayoutCompat
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textStyle="bold"
+                   android:textAlignment="textStart"
+                   android:text="Contact Me"
+                   android:layout_margin="10dp"/>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+                   android:layout_margin="20dp">
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:hint="Email"
+                       android:drawableEnd="@drawable/baseline_email_24"
+                       android:inputType="textEmailAddress"
+                       android:textStyle="bold">
+                   </com.google.android.material.textfield.TextInputEditText>
+               </com.google.android.material.textfield.TextInputLayout>
+               <com.google.android.material.textfield.TextInputLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+                   android:layout_margin="20dp">
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:hint="Anything to Tell"
+                       android:drawableEnd="@drawable/baseline_edit_calendar_24"
+                       android:inputType="text|textMultiLine"
+                       android:textStyle="bold">
+                   </com.google.android.material.textfield.TextInputEditText>
+               </com.google.android.material.textfield.TextInputLayout>
+               <androidx.appcompat.widget.AppCompatButton
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="20dp"
+                   android:background="@drawable/btn_background"
+                   android:text="Submit"/>
+
+           </androidx.appcompat.widget.LinearLayoutCompat>
+       </androidx.cardview.widget.CardView>
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="20dp"
+       app:cardCornerRadius="8dp"
+       app:cardElevation="15dp">
+       <androidx.appcompat.widget.LinearLayoutCompat
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="DM here"
+               android:layout_margin="10dp"
+               android:textStyle="bold"
+               android:textAlignment="textStart"/>
+           <androidx.appcompat.widget.LinearLayoutCompat
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <ImageView
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_margin="15dp"
+                   android:src="@drawable/github_logo"/>
+               <ImageView
+                   android:layout_width="60dp"
+                   android:layout_height="60dp"
+                   android:src="@drawable/instagram"
+                   android:layout_margin="15dp"/>
+               <ImageView
+               android:layout_width="40dp"
+               android:layout_height="50dp"
+               android:src="@drawable/x_images"
+               android:layout_margin="15dp"/>
+               <ImageView
+                   android:layout_width="70dp"
+                   android:layout_height="70dp"
+                   android:src="@drawable/linked_in_logo"
+                   android:layout_margin="15dp"/>
+           </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+       </androidx.appcompat.widget.LinearLayoutCompat>
+   </androidx.cardview.widget.CardView>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>
 </RelativeLayout>
