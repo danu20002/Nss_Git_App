@@ -39,12 +39,13 @@
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="25sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="8dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:text="anything"
+                        android:gravity="center"
+                        android:text="NSS Program Officer Gogte institute of Technology Belagavi"
                         android:layout_margin="5dp"
                         android:textStyle="italic"
                         android:textSize="15sp"
@@ -54,11 +55,12 @@
                        android:layout_height="wrap_content"
                        android:layout_margin="20dp"
                        android:background="@drawable/btn_background"
+                       android:drawableEnd="@drawable/baseline_arrow_downward_24"
                        android:text="Know More"
                        android:id="@+id/know_more_rajput"/>
                     <WebView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="600dp"
                         android:layout_margin="10dp"
                         android:visibility="gone"
                         android:id="@+id/webview_rajput_program"
