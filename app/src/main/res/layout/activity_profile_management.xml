@@ -356,6 +356,7 @@
               android:textColor="@color/black"
               android:textStyle="bold"
               android:textSize="20sp"
+              android:id="@+id/contact_us_settings"
               android:background="?attr/selectableItemBackground"
               android:drawableEnd="@drawable/baseline_contact_phone_24"
               android:padding="5dp"
