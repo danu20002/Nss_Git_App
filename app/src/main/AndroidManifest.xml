@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NssGit"
         tools:targetApi="31">
         <activity
+            android:name=".About_redcross"
+            android:exported="false" />
+        <activity
             android:name=".Patch_notes"
             android:exported="false" />
         <activity

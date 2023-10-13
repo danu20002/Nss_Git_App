@@ -151,7 +151,7 @@ FirebaseDatabase database;
         conatct_us_instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("")));
+                startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://instagram.com/klsgit_nss?igshid=MmU2YjMzNjRlOQ==")));
             }
         });
 

@@ -147,6 +147,7 @@
                           android:textColor="@color/black"
                           android:textStyle="bold"
                           android:textSize="20sp"
+                          android:id="@+id/about_red_cross_settings"
                           android:background="?attr/selectableItemBackground"
                           android:drawableEnd="@drawable/baseline_add_24"
                           android:padding="5dp"

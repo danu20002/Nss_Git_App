@@ -23,7 +23,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textSize="15sp"
-           android:text="No Current patch notes available. It will available after the  app version 2.0  "
+           android:text="No Current patch notes available. It will be available after the  app version 2.0  "
            android:textStyle="normal"
            android:textColor="@color/red"
            android:layout_margin="10dp"/>

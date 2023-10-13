@@ -4,29 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/default_theme"
     tools:context=".Group_belong_to">
-   <androidx.cardview.widget.CardView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-     android:layout_centerInParent="true"
-     app:cardCornerRadius="8dp"
-       android:layout_margin="15dp"
-     app:cardElevation="15dp">
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-       android:orientation="vertical">
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-         android:layout_margin="20dp"
-         android:textSize="29sp"
-         android:textStyle="bold"
-         android:text="Group Belongs To"
-         android:textAlignment="center">
-       </TextView>
-     </androidx.appcompat.widget.LinearLayoutCompat>
-   </androidx.cardview.widget.CardView>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/black"
+          android:textStyle="bold"
+          android:text="Groups"
+          android:textSize="30sp"
+          android:layout_margin="20dp"
+          android:textAlignment="center"/>
+          <androidx.cardview.widget.CardView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:cardCornerRadius="8dp"
+              app:cardElevation="18sp"
+              android:layout_margin="20dp">
+              <androidx.appcompat.widget.LinearLayoutCompat
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Ganga"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+
+              </androidx.appcompat.widget.LinearLayoutCompat>
+          </androidx.cardview.widget.CardView>
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>
