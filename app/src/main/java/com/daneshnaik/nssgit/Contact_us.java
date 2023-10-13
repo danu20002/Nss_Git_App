@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,6 +38,7 @@ import javax.mail.internet.MimeMessage;
 public class Contact_us extends AppCompatActivity {
     TextInputEditText email_contact_us;
     AppCompatButton btn_send_email;
+    ImageView conatct_us_instagram,contact_us_x;
 FirebaseAuth auth;
 FirebaseDatabase database;
     @Override
@@ -70,7 +74,7 @@ FirebaseDatabase database;
                 String email_send_btn_data=email_contact_us.getEditableText().toString().trim();
 
 
-                database.getReference().child("ContactUs").child(auth.getUid()).setValue(email_send_btn_data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                database.getReference().child("ContactUs").child(auth.getUid()).push().setValue(email_send_btn_data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isComplete()){
@@ -132,6 +136,22 @@ FirebaseDatabase database;
                         },2000);
                     }
                 });
+            }
+        });
+
+
+        contact_us_x=findViewById(R.id.contact_us_x);
+        conatct_us_instagram=findViewById(R.id.contact_us_instagram);
+        contact_us_x.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("")));
+            }
+        });
+        conatct_us_instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("")));
             }
         });
 

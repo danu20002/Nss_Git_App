@@ -85,10 +85,14 @@ public class User_login_page extends AppCompatActivity {
                             }
                         });
                     }else{
+                        Email_login.setText("Enter Email please");
                         Toast.makeText(User_login_page.this, "Enter the Password", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
                 }else{
+                    password_login.setText("Enter password please");
                     Toast.makeText(User_login_page.this, "Enter the Email", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                 }
             }
         });

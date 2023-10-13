@@ -81,6 +81,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="20dp"
+                    android:id="@+id/contact_us_instagram"
                     android:src="@drawable/instagram">
 
                 </ImageView>
@@ -88,6 +89,7 @@
                    android:layout_width="40dp"
                    android:layout_height="40dp"
                    android:layout_margin="20dp"
+                   android:id="@+id/contact_us_x"
                    android:src="@drawable/x_images"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
