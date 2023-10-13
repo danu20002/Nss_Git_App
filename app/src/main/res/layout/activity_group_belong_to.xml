@@ -29,13 +29,79 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical">
+                  <RadioGroup
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+
+
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="Ganga"
+                      android:text="ANNAPURNA"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
-
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="BRAHMAGIRI"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="VINDHYA"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="ARAVALI"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="PALANI"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="HIMALAYA"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="NILGIRI"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+                  <RadioButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="SATPURA"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+                  <RadioButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="SAHYADRI"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+                  <RadioButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="KAILASH"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+                  </RadioGroup>
+                  <androidx.appcompat.widget.AppCompatButton
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/btn_background"
+                      android:layout_margin="20dp"
+                      android:text="SUBMIT"
+                      android:id="@+id/group_submit_btn"/>
               </androidx.appcompat.widget.LinearLayoutCompat>
           </androidx.cardview.widget.CardView>
 

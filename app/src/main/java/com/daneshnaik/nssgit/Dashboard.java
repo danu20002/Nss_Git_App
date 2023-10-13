@@ -35,7 +35,7 @@ public class Dashboard extends AppCompatActivity {
     BottomNavigationView bottom_nav_dashboard;
     FirebaseRemoteConfig remoteConfig;
     ImageSlider imageSlider;
-
+  WebView dashboard_our_website;
     ProgressBar progressBar_dashboard;
 
     @Override
@@ -60,7 +60,10 @@ public class Dashboard extends AppCompatActivity {
 
 
 
-
+      dashboard_our_website=findViewById(R.id.our_website_webview_dashboard);
+        WebSettings settings=dashboard_our_website.getSettings();
+        settings.setJavaScriptEnabled(true);
+        dashboard_our_website.loadUrl("https://nss--nssklsgit20.repl.co/");
 
 
 
