@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bug_reports">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:text="Bug Reports"
+            android:textStyle="bold"
+            android:textSize="30sp">
+        </TextView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="18dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="20dp">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_margin="5dp"
+                    android:textStyle="italic"
+                    android:text="You Found Bugs In Our App! That's Great we are happy to fix it... "
+                    android:textColor="#EC3C05"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+                    android:layout_margin="10dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:drawableEnd="@drawable/baseline_email_24"
+                        android:id="@+id/email_bug_reports"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+                        android:layout_margin="10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:drawableEnd="@drawable/baseline_edit_calendar_24"
+                            android:textColor="@color/black"
+                            android:id="@+id/describe_bug_reports"
+                            android:hint="Describe Bug You found"
+                            android:inputType="text|textMultiLine"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/btn_background"
+                    android:text="Submit"
+                    android:id="@+id/btn_bug_reports"/>
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Developer Will Contact you soon.."
+                    android:textColor="#EA0404"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:textAlignment="center"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

@@ -90,7 +90,7 @@ FirebaseStorage storage;
         update_btn_profile_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final ProgressDialog progressDialog=new ProgressDialog(Profile_settings.this);
+                 ProgressDialog progressDialog=new ProgressDialog(Profile_settings.this);
                 progressDialog.setTitle("Updating");
                 progressDialog.setMessage("Updating Your Data");
                 progressDialog.show();
@@ -101,6 +101,7 @@ FirebaseStorage storage;
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(Profile_settings.this, "Updated Name", Toast.LENGTH_SHORT).show();
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -116,12 +117,14 @@ FirebaseStorage storage;
                     });
                 }else {
                     fullname_profile_settings.setError("Enter Your Name");
+                    progressDialog.dismiss();
                 }
                 if(!Phone_number_data.isEmpty()){
                     FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("mobileNumber").setValue(Phone_number_data).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(Profile_settings.this, "Updated Mobile Number", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -140,6 +143,7 @@ FirebaseStorage storage;
 
                 }else{
                     mobile_num_profile_settings.setError("Enter your Mobile Number");
+                    progressDialog.dismiss();
                 }
 
 

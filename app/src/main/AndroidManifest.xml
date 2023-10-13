@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NssGit"
         tools:targetApi="31">
         <activity
+            android:name=".Bug_reports"
+            android:exported="false" />
+        <activity
             android:name=".Raise_query"
             android:exported="false" />
         <activity

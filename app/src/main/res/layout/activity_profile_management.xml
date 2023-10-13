@@ -229,6 +229,7 @@
                       android:textColor="@color/black"
                       android:textStyle="bold"
                       android:textSize="20sp"
+                          android:id="@+id/bug_reports_settings"
                       android:background="?attr/selectableItemBackground"
                       android:drawableEnd="@drawable/baseline_bug_report_24"
                       android:padding="5dp"
