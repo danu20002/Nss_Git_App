@@ -185,6 +185,9 @@ public class chat extends AppCompatActivity {
     }
 
     public void sending_notification() {
+
+
+        String name_chat_got_not=FirebaseAuth.getInstance().getCurrentUser().getEmail();
         String username = "nssgitofficial@gmail.com";
         String password = "mgscxgqmxsdgzygo";
         Properties props = new Properties();
@@ -204,7 +207,7 @@ public class chat extends AppCompatActivity {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email_chat_got));
-            message.setSubject("Just got Message from   " + FirebaseAuth.getInstance().getCurrentUser().getEmail());
+            message.setSubject("Just got Message from   " +name_chat_got_not);
             message.setText(messge_typed);
 
             Transport.send(message);
