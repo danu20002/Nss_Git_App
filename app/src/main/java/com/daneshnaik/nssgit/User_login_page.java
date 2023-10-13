@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -19,7 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class User_login_page extends AppCompatActivity {
-    TextView new_account,forgot_password;
+    TextView new_account,forgot_password,about_nss_git;
     TextInputEditText Email_login,password_login;
     AppCompatButton login_btn;
     FirebaseAuth auth;
@@ -110,6 +111,13 @@ public class User_login_page extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),com.daneshnaik.nssgit.User_Forgotpassword_page.class));
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+            }
+        });
+        about_nss_git=findViewById(R.id.about_nss_git);
+        about_nss_git.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://nss--nssklsgit20.repl.co/about")));
             }
         });
 

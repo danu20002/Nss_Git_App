@@ -112,14 +112,16 @@
     android:text="About Nss Git"
     android:layout_margin="20dp"
     android:textStyle="bold"
+    android:id="@+id/about_nss_git"
     android:textColor="@color/black"
     android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/text_new_account"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"

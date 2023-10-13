@@ -145,7 +145,7 @@ FirebaseDatabase database;
         contact_us_x.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://x.com/nssklsgit22?t=KvRkfNB3j_W7MdAqi7dyrw&s=09")));
             }
         });
         conatct_us_instagram.setOnClickListener(new View.OnClickListener() {

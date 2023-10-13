@@ -58,6 +58,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+  //image slider
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 
 
     //mailing
@@ -65,4 +67,7 @@ dependencies {
     implementation 'com.sun.mail:android-activation:1.6.7'
     //reactions
     implementation "com.github.pgreze:android-reactions:1.6"
+
+    //lottie
+    implementation "com.airbnb.android:lottie:3.4.0"
 }

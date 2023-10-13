@@ -10,9 +10,18 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.AnimationTypes;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,13 +29,34 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
+import java.util.ArrayList;
+
 public class Dashboard extends AppCompatActivity {
     BottomNavigationView bottom_nav_dashboard;
     FirebaseRemoteConfig remoteConfig;
+    ImageSlider imageSlider;
+
+    ProgressBar progressBar_dashboard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+       progressBar_dashboard=findViewById(R.id.progressbar_dashboard);
+
+      imageSlider=findViewById(R.id.image_slider_dashboard);
+      ArrayList<SlideModel> slideModels=new ArrayList<>();
+      slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P7.jpg", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P1.JPG", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/pic3.jpg", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P1.JPG", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/pic4.jpg",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P5.jpg",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/plant.jpg",ScaleTypes.FIT));
+        imageSlider.setSlideAnimation(AnimationTypes.BACKGROUND_TO_FOREGROUND);
+        imageSlider.setImageList(slideModels,ScaleTypes.FIT);
 
 
 
