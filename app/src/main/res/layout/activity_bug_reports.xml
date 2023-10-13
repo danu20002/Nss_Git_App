@@ -80,7 +80,9 @@
                 android:text="Developer Will Contact you soon.."
                     android:textColor="#EA0404"
                     android:textStyle="bold"
+                    android:id="@+id/developer_message_bug"
                     android:visibility="gone"
+                    android:layout_margin="10dp"
                     android:textAlignment="center"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
 

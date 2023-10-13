@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daneshnaik.Tables.queriesTable;
@@ -36,6 +37,7 @@ import javax.mail.internet.MimeMessage;
 public class Bug_reports extends AppCompatActivity {
 TextInputEditText email_bug_reports,describe_bug_reports;
 AppCompatButton btn_submit_bug_reports;
+TextView bug_text_developer;
 FirebaseAuth auth;
 FirebaseDatabase database;
     @Override
@@ -48,6 +50,7 @@ FirebaseDatabase database;
         email_bug_reports=findViewById(R.id.email_bug_reports);
         describe_bug_reports=findViewById(R.id.describe_bug_reports);
         btn_submit_bug_reports=findViewById(R.id.btn_bug_reports);
+        bug_text_developer=findViewById(R.id.developer_message_bug);
         if(Build.VERSION.SDK_INT>9){
             StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -63,6 +66,7 @@ FirebaseDatabase database;
 
             }
         });
+
         btn_submit_bug_reports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,8 +87,6 @@ FirebaseDatabase database;
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isComplete()){
-
-
                                         progressDialog.setMessage("Report sent Successfully");
                                         describe_bug_reports.setText("");
                                         describe_bug_reports.clearFocus();
@@ -125,6 +127,7 @@ FirebaseDatabase database;
                                                 }catch (MessagingException e){
                                                     throw new RuntimeException(e);
                                                 }
+                                                bug_text_developer.setVisibility(View.VISIBLE);
                                                 progressDialog.dismiss();
 
                                             }

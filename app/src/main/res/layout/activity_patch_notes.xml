@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Patch_notes">
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textAlignment="center"
+           android:textStyle="bold"
+           android:textColor="@color/black"
+           android:text="Patch Notes"
+           android:textSize="30sp">
+
+       </TextView>
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="15sp"
+           android:text="No Current patch notes available. It will available after the  app version 2.0  "
+           android:textStyle="normal"
+           android:textColor="@color/red"
+           android:layout_margin="10dp"/>
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

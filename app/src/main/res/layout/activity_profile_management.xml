@@ -292,6 +292,7 @@
               android:text="Patch Notes"
               android:textColor="@color/black"
               android:textStyle="bold"
+                  android:id="@+id/patch_notes_settings"
               android:textSize="20sp"
               android:background="?attr/selectableItemBackground"
               android:drawableEnd="@drawable/baseline_note_alt_24"
