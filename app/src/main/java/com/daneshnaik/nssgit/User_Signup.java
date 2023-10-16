@@ -31,6 +31,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 import javax.mail.Authenticator;
 import javax.mail.MessagingException;
@@ -106,7 +107,7 @@ public class User_Signup extends AppCompatActivity {
             String Password=password_signup.getEditableText().toString().trim();
             String Confirm_password=confirm_signup.getEditableText().toString().trim();
               if(!FullName.isEmpty()){
-                     if(!Email.isEmpty() ){
+                     if(!Email.isEmpty() && Pattern.matches("2gi20is011\\.@students\\.git\\.edu",Email)){
                          if(!Mobile_Number_signup.isEmpty()){
                              if(!Password.isEmpty()){
                                  if(!Confirm_password.isEmpty()){
