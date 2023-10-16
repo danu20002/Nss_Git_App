@@ -95,6 +95,7 @@ public class User_Signup extends AppCompatActivity {
     signup_btn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+
             final ProgressDialog progressDialog=new ProgressDialog(User_Signup.this);
             progressDialog.setTitle("Uploading");
             progressDialog.setMessage("Compressing Data");
@@ -113,6 +114,7 @@ public class User_Signup extends AppCompatActivity {
 
                                         if(Password.equals(Confirm_password)){
                                             if(checkbox_signup.isChecked()){
+                                                signup_btn.setBackground(getDrawable(R.drawable.btn_background));
                                          auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                              @Override
                                              public void onComplete(@NonNull Task<AuthResult> task) {

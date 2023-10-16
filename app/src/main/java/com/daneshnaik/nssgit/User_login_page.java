@@ -41,6 +41,7 @@ public class User_login_page extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String Email_log=Email_login.getEditableText().toString().trim();
                 String Password=password_login.getEditableText().toString().trim();
                 final ProgressDialog progressDialog=new ProgressDialog(User_login_page.this);
@@ -49,6 +50,7 @@ public class User_login_page extends AppCompatActivity {
                 progressDialog.show();
                 if(!Email_log.isEmpty()){
                     if(!Password.isEmpty()){
+                        login_btn.setBackground(getDrawable(R.drawable.btn_background));
                         auth.signInWithEmailAndPassword(Email_log,Password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
