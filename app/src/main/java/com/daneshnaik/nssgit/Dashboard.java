@@ -50,7 +50,7 @@ public class Dashboard extends AppCompatActivity {
 
       imageSlider=findViewById(R.id.image_slider_dashboard);
       ArrayList<SlideModel> slideModels=new ArrayList<>();
-      slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P7.jpg", ScaleTypes.FIT));
+      slideModels.add(new SlideModel("https://nss--nssklsgit20.erpl.co/static/IMG/P7.jpg", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P1.JPG", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/pic3.jpg", ScaleTypes.FIT));
@@ -59,6 +59,7 @@ public class Dashboard extends AppCompatActivity {
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg",ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P5.jpg",ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/plant.jpg",ScaleTypes.FIT));
+
         imageSlider.setSlideAnimation(AnimationTypes.BACKGROUND_TO_FOREGROUND);
         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
 
