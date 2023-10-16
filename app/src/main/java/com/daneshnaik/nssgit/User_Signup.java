@@ -200,6 +200,7 @@ public class User_Signup extends AppCompatActivity {
                                              public void onFailure(@NonNull Exception e) {
 
                                                  Toast.makeText(User_Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                 progressDialog.dismiss();
                                              }
                                          });
 
