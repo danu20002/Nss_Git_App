@@ -28,7 +28,7 @@
                         app:civ_border_overlay="true"
                         app:civ_border_width="2dp"
                         android:layout_margin="15dp"
-                        android:src="@drawable/baseline_person_4_24"
+                        android:src="@drawable/program_officer"
                         android:layout_gravity="center">
                     </de.hdodenhof.circleimageview.CircleImageView>
                     <TextView

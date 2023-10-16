@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daneshnaik.Tables.Users;
@@ -47,6 +48,7 @@ public class User_Signup extends AppCompatActivity {
     AppCompatButton signup_btn;
     CheckBox checkbox_signup;
     Uri selectImage;
+    TextView terms_and_conditions;
 
     FirebaseStorage storage;
     FirebaseDatabase database;
@@ -63,6 +65,7 @@ public class User_Signup extends AppCompatActivity {
         confirm_signup=findViewById(R.id.confirm_signup);
         profile_pic=findViewById(R.id.profile_image_signup);
         checkbox_signup=findViewById(R.id.checkbox_signup);
+        terms_and_conditions=findViewById(R.id.term_and_conditions_signup);
         signup_btn=findViewById(R.id.signup_btn);
 
         auth=FirebaseAuth.getInstance();
@@ -233,7 +236,12 @@ public class User_Signup extends AppCompatActivity {
         }
     });
 
-
+terms_and_conditions.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.termsandcondiitionssample.com/live.php?token=swCDADyAeJmYbMsTUBHkfDhSXEkIcKGr")));
+    }
+});
 
 
 

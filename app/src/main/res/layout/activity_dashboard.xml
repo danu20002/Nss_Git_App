@@ -28,11 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_2"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,6 +120,7 @@
                         <WebView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:clickable="true"
                             android:id="@+id/our_website_webview_dashboard"/>
                     </ScrollView>
 
