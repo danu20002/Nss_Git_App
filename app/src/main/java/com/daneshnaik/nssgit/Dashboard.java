@@ -3,6 +3,7 @@ package com.daneshnaik.nssgit;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -35,8 +37,10 @@ public class Dashboard extends AppCompatActivity {
     BottomNavigationView bottom_nav_dashboard;
     FirebaseRemoteConfig remoteConfig;
     ImageSlider imageSlider;
+    CardView Our_website_cardview;
   WebView dashboard_our_website;
     ProgressBar progressBar_dashboard;
+    TextView visit_here;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +70,22 @@ public class Dashboard extends AppCompatActivity {
         dashboard_our_website.loadUrl("https://nss--nssklsgit20.repl.co/");
 
 
+        Our_website_cardview=findViewById(R.id.our_website_cardview);
+        Our_website_cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://nss--nssklsgit20.repl.co/")));
+            }
+        });
 
+
+ visit_here=findViewById(R.id.visit_here_dashboard);
+ visit_here.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+         startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://nss--nssklsgit20.repl.co/")));
+     }
+ });
 
 
 

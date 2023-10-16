@@ -106,7 +106,7 @@ public class User_Signup extends AppCompatActivity {
             String Password=password_signup.getEditableText().toString().trim();
             String Confirm_password=confirm_signup.getEditableText().toString().trim();
               if(!FullName.isEmpty()){
-                     if(!Email.isEmpty()){
+                     if(!Email.isEmpty() ){
                          if(!Mobile_Number_signup.isEmpty()){
                              if(!Password.isEmpty()){
                                  if(!Confirm_password.isEmpty()){
