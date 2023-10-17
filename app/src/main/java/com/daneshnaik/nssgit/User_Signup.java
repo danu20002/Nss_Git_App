@@ -107,7 +107,7 @@ public class User_Signup extends AppCompatActivity {
             String Password=password_signup.getEditableText().toString().trim();
             String Confirm_password=confirm_signup.getEditableText().toString().trim();
               if(!FullName.isEmpty()){
-                     if(!Email.isEmpty() && Pattern.matches("2gi20is011\\.@students\\.git\\.edu",Email)){
+                     if(!Email.isEmpty() && Pattern.matches("2gi20is011@students\\.git\\.edu",Email)){
                          if(!Mobile_Number_signup.isEmpty()){
                              if(!Password.isEmpty()){
                                  if(!Confirm_password.isEmpty()){
@@ -230,6 +230,7 @@ public class User_Signup extends AppCompatActivity {
                              progressDialog.dismiss();
                          }
                      }else{
+                         Toast.makeText(User_Signup.this, "Please provide College Email ", Toast.LENGTH_SHORT).show();
                          email_signup.setError("Enter Email");
                          progressDialog.dismiss();
                      }
