@@ -28,6 +28,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
@@ -40,17 +45,22 @@ public class Dashboard extends AppCompatActivity {
     CardView Our_website_cardview;
   WebView dashboard_our_website;
     ProgressBar progressBar_dashboard;
-    TextView visit_here;
+    TextView visit_here,group_belongs_dashboard;
+    FirebaseAuth auth;
+    FirebaseDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
        progressBar_dashboard=findViewById(R.id.progressbar_dashboard);
+       auth=FirebaseAuth.getInstance();
+       database=FirebaseDatabase.getInstance();
 
       imageSlider=findViewById(R.id.image_slider_dashboard);
       ArrayList<SlideModel> slideModels=new ArrayList<>();
-      slideModels.add(new SlideModel("https://nss--nssklsgit20.erpl.co/static/IMG/P7.jpg", ScaleTypes.FIT));
+
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P1.JPG", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/pic3.jpg", ScaleTypes.FIT));
@@ -87,6 +97,27 @@ public class Dashboard extends AppCompatActivity {
          startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://nss--nssklsgit20.repl.co/")));
      }
  });
+group_belongs_dashboard=findViewById(R.id.group_belongs_dashboard);
+
+database.getReference().child("Users").child(auth.getUid()).addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot snapshot) {
+        group_belongs_dashboard.setText(" Group : "+snapshot.child("group").getValue().toString());
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError error) {
+
+    }
+});
+
+
+
+
+
+
+
+
 
 
 

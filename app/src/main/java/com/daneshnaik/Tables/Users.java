@@ -17,6 +17,10 @@ public class Users {
 
 
 
+    String group;
+
+
+
     public Users(String id, String fullName, String email, String mobileNumber, String password, String imageurl) {
         this.id = id;
         FullName = fullName;
@@ -28,6 +32,17 @@ public class Users {
 
     public Users() {
     }
+
+    public Users(String id, String fullName, String email, String mobileNumber, String password, String imageurl, String group) {
+        this.id = id;
+        FullName = fullName;
+        Email = email;
+        MobileNumber = mobileNumber;
+        this.password = password;
+        Imageurl = imageurl;
+        this.group = group;
+    }
+
 
     public String getId() {
         return id;
@@ -81,5 +96,12 @@ public class Users {
 
     public void setLastmessage(String lastmessage) {
         Lastmessage = lastmessage;
+    }
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 }

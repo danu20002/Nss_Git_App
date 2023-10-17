@@ -140,7 +140,8 @@ public class User_Signup extends AppCompatActivity {
                                                                                  String email=email_signup.getEditableText().toString().trim();
                                                                                  String mobile_number=mobile_number_signup.getEditableText().toString().trim();
                                                                                  String password=password_signup.getEditableText().toString().trim();
-                                                                                 Users users=new Users(uid,name,email,mobile_number,password,imageurl);
+                                                                                 String Group="not mentioned yet";
+                                                                                 Users users=new Users(uid,name,email,mobile_number,password,imageurl,Group);
                                                                                  progressDialog.setMessage(" See the Email and Verify");
                                                                                  database.getReference().child("Users").child(uid).setValue(users).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                                      @Override
@@ -152,7 +153,7 @@ public class User_Signup extends AppCompatActivity {
                                                                                                  Toast.makeText(User_Signup.this, "All Data uploaded", Toast.LENGTH_SHORT).show();
                                                                                                  progressDialog.setMessage("Just a Second please");
                                                                                                  sending_notification();
-                                                                                                 progressDialog.setMessage("All Data Uploaded");
+                                                                                                 progressDialog.setMessage("All the  Data Uploaded");
                                                                                                  progressDialog.dismiss();
                                                                                                  Intent intent=new Intent(User_Signup.this,User_login_page.class);
                                                                                                  startActivity(intent);

@@ -177,8 +177,10 @@
                         android:layout_margin="10dp"
                         android:text="Group : Not mentioned yet"
                         android:drawableStart="@drawable/baseline_groups_24"
+                             android:id="@+id/group_belongs_dashboard"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
 
-                        android:textStyle="normal"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -186,7 +188,7 @@
                         android:textSize="20sp"
                         android:textStyle="normal"
                         android:layout_margin="10dp"
-                        android:text="Number of Activities Present:0"
+                        android:text="Number of Activities Present: 0"
                         android:textColor="@color/black"
                         android:drawableStart="@drawable/baseline_edit_calendar_24"/>
                 </androidx.appcompat.widget.LinearLayoutCompat>

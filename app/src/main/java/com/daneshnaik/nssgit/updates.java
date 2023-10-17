@@ -24,6 +24,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.inappmessaging.FirebaseInAppMessaging;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,7 @@ public class updates extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updates);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("notification");
         floatingActionButton_updates=findViewById(R.id.floating_btn_update);
 
         if(FirebaseAuth.getInstance().getCurrentUser().getEmail() == "nssgitofficial@gmail.com"){

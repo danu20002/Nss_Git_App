@@ -39,59 +39,69 @@
                       android:layout_height="wrap_content"
                       android:text="ANNAPURNA"
                       android:textSize="20sp"
+                      android:id="@+id/annapurna_group"
                       android:textStyle="bold"/>
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="BRAHMAGIRI"
+                      android:id="@+id/bhramagiri_group"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="VINDHYA"
+                      android:id="@+id/vindya_group"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="ARAVALI"
+                      android:id="@+id/aravali_group"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="PALANI"
+                      android:id="@+id/palani_group"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="HIMALAYA"
+                      android:id="@+id/himalaya_group"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
                   <RadioButton
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="NILGIRI"
+                      android:id="@+id/nilagiri_group"
                       android:textSize="20sp"
                       android:textStyle="bold"/>
                   <RadioButton
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="SATPURA"
+                      android:id="@+id/satpura_group"
                   android:textSize="20sp"
                   android:textStyle="bold"/>
                   <RadioButton
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="SAHYADRI"
+                      android:id="@+id/sahyaderi_group"
                   android:textSize="20sp"
                   android:textStyle="bold"/>
                   <RadioButton
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="KAILASH"
+                      android:id="@+id/kailash_group"
                   android:textSize="20sp"
                   android:textStyle="bold"/>
                   </RadioGroup>

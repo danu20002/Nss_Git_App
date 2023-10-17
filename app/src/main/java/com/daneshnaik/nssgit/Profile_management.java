@@ -44,6 +44,7 @@ public class Profile_management extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String profile_image_settings=snapshot.child("imageurl").getValue().toString();
                 Glide.with(getApplicationContext()).load(profile_image_settings).placeholder(R.drawable.baseline_person_24).into(profile_photo_settings);
+                group_belongs_to.setText("Group : "+snapshot.child("group").getValue().toString());
             }
 
             @Override
@@ -51,6 +52,7 @@ public class Profile_management extends AppCompatActivity {
 
             }
         });
+
 
  profile_settings_changer=findViewById(R.id.profile_settings_changer);
  profile_settings_changer.setOnClickListener(new View.OnClickListener() {
