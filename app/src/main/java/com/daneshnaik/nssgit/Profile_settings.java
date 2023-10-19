@@ -34,6 +34,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.regex.Pattern;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile_settings extends AppCompatActivity {
@@ -119,7 +121,7 @@ FirebaseStorage storage;
                     fullname_profile_settings.setError("Enter Your Name");
                     progressDialog.dismiss();
                 }
-                if(!Phone_number_data.isEmpty()){
+                if(!Phone_number_data.isEmpty() && Pattern.matches("^[0-9]{10}$",Phone_number_data)){
                     FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("mobileNumber").setValue(Phone_number_data).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -142,7 +144,7 @@ FirebaseStorage storage;
 
 
                 }else{
-                    mobile_num_profile_settings.setError("Enter your Mobile Number");
+                    mobile_num_profile_settings.setError("Enter your Mobile Number Correctly");
                     progressDialog.dismiss();
                 }
 

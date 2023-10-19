@@ -61,7 +61,7 @@
         app:cardElevation="20dp">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
@@ -77,14 +77,19 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:background="@android:color/black" />
-            <TextView
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="EVENT ON OCTOBER 2ND SHASTRI JAYANTI AND GANDHI JAYANTI TIME: 08:30 AM DATE : 02 OCTOBER 2023 (MONDAY)"
-                android:textStyle="normal"
-                android:layout_margin="5dp"
-                 android:textColor="@color/black"
-                android:textAlignment="textStart"/>
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EVENT ON OCTOBER 2ND SHASTRI JAYANTI AND GANDHI JAYANTI TIME: 08:30 AM DATE : 02 OCTOBER 2023 (MONDAY)"
+                    android:textStyle="normal"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"/>
+            </ScrollView>
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>

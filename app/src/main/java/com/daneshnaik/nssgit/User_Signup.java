@@ -108,7 +108,7 @@ public class User_Signup extends AppCompatActivity {
             String Confirm_password=confirm_signup.getEditableText().toString().trim();
               if(!FullName.isEmpty()){
                      if(!Email.isEmpty() && Pattern.matches("2gi20is011@students\\.git\\.edu",Email)){
-                         if(!Mobile_Number_signup.isEmpty()){
+                         if(!Mobile_Number_signup.isEmpty() && Pattern.matches("^[0-9]{10}$",Mobile_Number_signup)){
                              if(!Password.isEmpty()){
                                  if(!Confirm_password.isEmpty()){
                                      if(selectImage!=null){
@@ -227,7 +227,7 @@ public class User_Signup extends AppCompatActivity {
                                  progressDialog.dismiss();
                              }
                          }else{
-                             mobile_number_signup.setError("Enter Mobile Number");
+                             mobile_number_signup.setError("Enter Mobile Number Correctly");
                              progressDialog.dismiss();
                          }
                      }else{

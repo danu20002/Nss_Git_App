@@ -87,7 +87,8 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:maxLength="10"
-                    android:minEms="10"
+
+                    android:ems="10"
                     android:drawableRight="@drawable/baseline_call_24"
                     android:id="@+id/mobile_num_signup"
                     android:inputType="number"
