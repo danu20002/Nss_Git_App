@@ -48,7 +48,7 @@ public class updates extends AppCompatActivity {
         floatingActionButton_updates=findViewById(R.id.floating_btn_update);
 
 
-        if(FirebaseAuth.getInstance().getCurrentUser().getUid().matches("pxaZHdzarpaBEWyJaexN6MQL1p93") ){
+        if(FirebaseAuth.getInstance().getCurrentUser().getEmail().matches("nssgitofficial@gmail.com") ){
               floatingActionButton_updates.setVisibility(View.VISIBLE);
         }else{
             floatingActionButton_updates.setVisibility(View.INVISIBLE);

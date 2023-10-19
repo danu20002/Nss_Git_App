@@ -63,32 +63,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recent Activities"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginLeft="20dp"
-                android:textColor="#1976D2"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recent Activities"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#1976D2"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:visibility="gone"
+                    android:id="@+id/edit_recent_activities_image"
+                    android:src="@drawable/baseline_edit_24"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:background="@android:color/black" />
-            <ScrollView
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="EVENT ON OCTOBER 2ND SHASTRI JAYANTI AND GANDHI JAYANTI TIME: 08:30 AM DATE : 02 OCTOBER 2023 (MONDAY)"
-                    android:textStyle="normal"
-                    android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    android:textAlignment="textStart"/>
-            </ScrollView>
+                android:layout_height="match_parent"
+                android:isScrollContainer="true">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/recent_activities_recyclerview"
+                        android:padding="5dp"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -130,7 +146,7 @@
                             android:clickable="true"
                             android:id="@+id/visit_here_dashboard"
                             android:layout_marginRight="10dp"/>
-                            />
+
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <View
@@ -146,7 +162,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:clickable="true"
-
                             android:id="@+id/our_website_webview_dashboard"/>
                     </ScrollView>
 

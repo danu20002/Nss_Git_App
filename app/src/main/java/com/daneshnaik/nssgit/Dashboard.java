@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -16,10 +18,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daneshnaik.Adapters.RecentActivitiesAdapter;
+import com.daneshnaik.Tables.recent_activities;
+import com.daneshnaik.Tables.updates_table;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.AnimationTypes;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -48,6 +54,12 @@ public class Dashboard extends AppCompatActivity {
     TextView visit_here,group_belongs_dashboard;
     FirebaseAuth auth;
     FirebaseDatabase database;
+    ImageView edit_recent_activities_image;
+
+    RecentActivitiesAdapter activitiesAdapter;
+   ArrayList <recent_activities> recent_activitiesArrayList;
+   RecyclerView recyclerView_recent;
+   int id=0;
 
 
     @Override
@@ -62,13 +74,14 @@ public class Dashboard extends AppCompatActivity {
       ArrayList<SlideModel> slideModels=new ArrayList<>();
 
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P1.JPG", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/pic3.jpg", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P1.JPG", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/pic4.jpg",ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg",ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P5.jpg",ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/plant.jpg",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_32019pmByGPSMapCamera.jpg?alt=media&token=3ee6cb64-efaf-417e-a19c-7db8f0d5236b&_gl=1*3fcdt7*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODIxNS4yNC4wLjA.", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_31225pmByGPSMapCamera.jpg?alt=media&token=b58e539d-31ba-4227-8860-c6215442332a&_gl=1*xs30tv*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODM1OC4yOS4wLjA.", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_30943pmByGPSMapCamera.jpg?alt=media&token=d33a5d31-67a6-4b65-a389-6c5f92841514&_gl=1*h2uik*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODQwNi40Ni4wLjA.", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_32243pmByGPSMapCamera.jpg?alt=media&token=d17125b5-aa93-4d59-bd90-1912a31afda5&_gl=1*c2sfrb*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODQyNy4yNS4wLjA.",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2FSAVE_20230907_185058.jpg?alt=media&token=1a236144-ee94-4f49-8734-c9b120dd34cc&_gl=1*1svs6rl*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODQ1My42MC4wLjA.",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2FSAVE_20230907_185148.jpg?alt=media&token=a7a7553e-6fbc-47d9-a3f6-23c0b913d347&_gl=1*1eu0r81*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODQ3Ni4zNy4wLjA.",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2FSAVE_20230907_185233.jpg?alt=media&token=0f2d8dc7-724a-4908-b594-0c909abecfb9&_gl=1*16kyy3*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODUwMC4xMy4wLjA.",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2FSAVE_20230907_185534.jpg?alt=media&token=b8326004-8098-413a-8b4f-6fd6f3ceff83&_gl=1*11wzyys*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODUxOC42MC4wLjA.",ScaleTypes.FIT));
 
         imageSlider.setSlideAnimation(AnimationTypes.BACKGROUND_TO_FOREGROUND);
         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
@@ -113,9 +126,52 @@ database.getReference().child("Users").child(auth.getUid()).addValueEventListene
 
 
 
+edit_recent_activities_image=findViewById(R.id.edit_recent_activities_image);
+if(FirebaseAuth.getInstance().getCurrentUser().getEmail().matches("nssgitofficial@gmail.com")){
+    edit_recent_activities_image.setVisibility(View.VISIBLE);
+}else {
+    edit_recent_activities_image.setVisibility(View.INVISIBLE);
+}
+edit_recent_activities_image.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+      startActivity(new Intent(getApplicationContext(), recent_activities_taker.class));
+    }
+});
+recent_activitiesArrayList=new ArrayList<>();
+activitiesAdapter=new RecentActivitiesAdapter(this,recent_activitiesArrayList);
+recyclerView_recent=findViewById(R.id.recent_activities_recyclerview);
 
+recyclerView_recent.setAdapter(activitiesAdapter);
 
+        recyclerView_recent.smoothScrollToPosition(0);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView_recent.setLayoutManager(layoutManager);
+       recyclerView_recent.smoothScrollBy(0,5);
 
+database.getReference().child("recents").addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot snapshot) {
+        recent_activitiesArrayList.clear();
+        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+            recent_activities tables = dataSnapshot.getValue(recent_activities.class);
+            recent_activitiesArrayList.add(tables);
+
+            if(snapshot.exists()){
+                id=(int) snapshot.getChildrenCount();
+            }
+
+        }
+        activitiesAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError error) {
+
+    }
+});
 
 
 

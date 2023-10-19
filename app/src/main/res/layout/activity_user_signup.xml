@@ -71,7 +71,7 @@
                     android:drawableRight="@drawable/baseline_email_24"
                     android:id="@+id/email_signup"
                     android:inputType="textEmailAddress"
-                    android:hint="Email"/>
+                    android:hint="Institute Email"/>
 
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
