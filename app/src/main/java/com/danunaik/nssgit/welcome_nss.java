@@ -19,7 +19,7 @@ public class welcome_nss extends AppCompatActivity {
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 finish();
             }
-        },3500);
+        },0);
 
     }
 }

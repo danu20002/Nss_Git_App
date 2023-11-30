@@ -156,10 +156,10 @@ database.getReference().child("recents").addValueEventListener(new ValueEventLis
         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
             recent_activities tables = dataSnapshot.getValue(recent_activities.class);
             recent_activitiesArrayList.add(tables);
-
-            if(snapshot.exists()){
-                id=(int) snapshot.getChildrenCount();
-            }
+//
+//            if(snapshot.exists()){
+//                id=(int) snapshot.getChildrenCount();
+//            }
 
         }
         activitiesAdapter.notifyDataSetChanged();

@@ -50,7 +50,7 @@ public class User_login_page extends AppCompatActivity {
                 progressDialog.show();
                 if(!Email_log.isEmpty()){
                     if(!Password.isEmpty()){
-                        login_btn.setBackground(getDrawable(R.drawable.btn_background));
+
                         auth.signInWithEmailAndPassword(Email_log,Password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
@@ -88,12 +88,12 @@ public class User_login_page extends AppCompatActivity {
                             }
                         });
                     }else{
-                        Email_login.setText("Enter Email please");
+                        Email_login.setError("Enter Email please");
                         Toast.makeText(User_login_page.this, "Enter the Password", Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                     }
                 }else{
-                    password_login.setText("Enter password please");
+                    password_login.setError("Enter password please");
                     Toast.makeText(User_login_page.this, "Enter the Email", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
