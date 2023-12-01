@@ -59,6 +59,10 @@ FirebaseAuth auth;
 
                      }
                  });
+                }else {
+                    progressDialog.dismiss();
+                    Toast.makeText(User_Forgotpassword_page.this, "Please provide Email", Toast.LENGTH_LONG).show();
+
                 }
             }
         });
