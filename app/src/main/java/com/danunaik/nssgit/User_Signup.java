@@ -17,6 +17,15 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.danunaik.Tables.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,6 +40,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
@@ -154,6 +165,7 @@ public class User_Signup extends AppCompatActivity {
                                                                                                  Toast.makeText(User_Signup.this, "All Data uploaded", Toast.LENGTH_SHORT).show();
                                                                                                  progressDialog.setMessage("Just a Second please");
                                                                                                  sending_notification();
+                                                                                                 add_ItemtoSheet();
                                                                                                  progressDialog.setMessage("All the  Data Uploaded");
                                                                                                  progressDialog.dismiss();
                                                                                                  Intent intent=new Intent(User_Signup.this,User_login_page.class);
@@ -323,6 +335,42 @@ terms_and_conditions.setOnClickListener(new View.OnClickListener() {
             throw new RuntimeException(e);
         }
 
+    }
+    private void add_ItemtoSheet(){
+         final String Name_sheet=full_name.getEditableText().toString().trim();
+         final String Email_sheet=email_signup.getEditableText().toString().trim();
+         final  String Phone_sheet=mobile_number_signup.getEditableText().toString().trim();
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycby5u-XMd4MLSRhPB2VyfAnovxDTPRIkz2YIbvwSEB6Jd622YWyzUA6uK0mTVxq8bO30VA/exec", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(User_Signup.this, ""+response, Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams(){
+                Map<String,String> params=new HashMap<>();
+                params.put("action","addItem");
+                params.put("Username",Name_sheet);
+                params.put("Email",Email_sheet);
+                params.put("PhoneNumber",Phone_sheet);
+                return params;
+
+            }
+
+
+
+        };
+        int timeOut=50000;
+        RetryPolicy retryPolicy=new DefaultRetryPolicy(timeOut,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        stringRequest.setRetryPolicy(retryPolicy);
+        RequestQueue queue= Volley.newRequestQueue(User_Signup.this);
+        queue.add(stringRequest);
     }
 
 

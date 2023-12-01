@@ -115,8 +115,9 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_margin="20dp"
+                   android:textColor="@color/white"
                    android:id="@+id/btn_submit_contact_developer"
-                   android:background="@drawable/btn_background"
+                   android:background="@drawable/signin_btn_background"
                    android:text="Submit"/>
 
            </androidx.appcompat.widget.LinearLayoutCompat>

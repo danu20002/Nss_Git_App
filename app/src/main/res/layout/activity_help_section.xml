@@ -5,6 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Help_section">
+
+<com.airbnb.lottie.LottieAnimationView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/cardview_help"
+    android:layout_marginBottom="-20dp"
+     android:background="@color/default_theme"
+    app:lottie_rawRes="@raw/help_section"
+    app:lottie_loop="true"
+    app:lottie_autoPlay="true"/>
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:cardCornerRadius="28dp"
+           android:id="@+id/cardview_help"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="-20dp"
+           app:cardElevation="20dp">
+
+
+
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -18,8 +40,9 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:text="Help Section"
-            android:textAlignment="center"
-            android:layout_margin="10dp"
+            android:textAlignment="textStart"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/black">
         </TextView>
             <TextView
@@ -28,7 +51,7 @@
                 android:textColor="@color/red"
                 android:textAlignment="textStart"
                 android:text="We are here to help you just give below details carefully"
-                android:layout_margin="20dp" />
+                android:layout_marginStart="20dp" />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,10 +85,17 @@
        android:layout_height="wrap_content"
        android:text="Submit"
        android:id="@+id/help_submit_btn"
-       android:layout_margin="20dp"
-       android:background="@drawable/btn_background"/>
+       android:textColor="@color/white"
+       android:layout_marginStart="20dp"
+       android:layout_marginTop="20dp"
+       android:layout_marginBottom="40dp"
+       android:layout_marginEnd="20dp"
+
+       android:background="@drawable/signin_btn_background"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>
+       </androidx.cardview.widget.CardView>
+
 </RelativeLayout>

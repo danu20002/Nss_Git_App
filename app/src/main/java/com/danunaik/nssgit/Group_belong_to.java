@@ -62,7 +62,7 @@ FirebaseDatabase database;
                 } else if (himalaya_group.isChecked()) {
                     group_value="Himalaya";
                 } else if (nilagiri_group.isChecked()) {
-                    group_value="Nilairi";
+                    group_value="Nilagiri";
                 } else if (satpura_group.isChecked()) {
                     group_value="Satpura";
                 } else if (sahyadri_group.isChecked()) {

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Patch_notes">
+
    <androidx.appcompat.widget.LinearLayoutCompat
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -19,14 +20,76 @@
            android:textSize="30sp">
 
        </TextView>
-       <TextView
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+       <androidx.appcompat.widget.LinearLayoutCompat
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:textSize="15sp"
-           android:text="No Current patch notes available. It will be available after the  app version 2.0  "
-           android:textStyle="normal"
-           android:textColor="@color/red"
-           android:layout_margin="10dp"/>
+           android:orientation="vertical"
+         >
 
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:cardElevation="20dp"
+           app:cardCornerRadius="20dp"
+           android:layout_marginStart="20dp"
+           android:layout_marginBottom="10dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="10dp"
+           >
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="New Interface with Better UI Design"
+               android:layout_margin="10dp"
+               android:padding="10dp"
+               android:textStyle="bold"
+               android:textColor="#2196F3"/>
+       </androidx.cardview.widget.CardView>
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:cardElevation="20dp"
+           app:cardCornerRadius="20dp"
+           android:layout_marginStart="20dp"
+           android:layout_marginBottom="10dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="10dp"
+           >
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Data Security Increased to level 3"
+               android:layout_margin="10dp"
+               android:padding="10dp"
+               android:textStyle="bold"
+               android:textColor="#2196F3"/>
+       </androidx.cardview.widget.CardView>
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:cardElevation="20dp"
+           app:cardCornerRadius="20dp"
+           android:layout_marginStart="20dp"
+           android:layout_marginBottom="10dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="10dp"
+           >
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Events credits Updated"
+               android:layout_margin="10dp"
+               android:padding="10dp"
+               android:textStyle="bold"
+               android:textColor="#2196F3"/>
+       </androidx.cardview.widget.CardView>
+       </androidx.appcompat.widget.LinearLayoutCompat>
+       </ScrollView>
    </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

@@ -60,8 +60,9 @@
                 android:layout_margin="20dp"
                 android:textStyle="bold"
                 android:text="Send Email"
+                android:textColor="@color/white"
                 android:id="@+id/btn_send_email"
-                android:background="@drawable/btn_background"/>
+                android:background="@drawable/signin_btn_background"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

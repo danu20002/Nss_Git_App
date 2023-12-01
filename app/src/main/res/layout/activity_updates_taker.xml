@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbarStyle="insideInset"
-    android:scrollbarAlwaysDrawVerticalTrack="true"
-    android:nestedScrollingEnabled="true"
-    android:scrollbars="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cardview_updates_taker"
+        android:layout_marginBottom="-20dp"
+        app:lottie_rawRes="@raw/login_animation"
+        app:lottie_autoPlay="true"
+        android:background="@color/default_theme"
+        app:lottie_loop="true"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="28dp"
+        app:cardPreventCornerOverlap="false"
+        android:id="@+id/cardview_updates_taker"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-20dp"
+        app:cardElevation="20dp">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,9 +36,31 @@
             android:layout_height="wrap_content"
             android:text="Send Updates"
             android:textStyle="bold"
-            android:textColor="@color/danu_color"
+            android:textColor="#072CF6"
             android:textSize="35sp"
-            android:textAlignment="center"/>
+            android:textAlignment="textStart"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:text="Please Provide below information "/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="insideInset"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:nestedScrollingEnabled="true"
+            android:scrollbars="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -101,13 +142,15 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/danu_color"
+            android:background="@drawable/signin_btn_background"
             android:layout_margin="15dp"
             android:text="Send Update"
+            android:textColor="@color/white"
             android:layout_marginBottom="40dp"
             android:textStyle="bold"
             android:id="@+id/send_update_btn"/>
-
     </LinearLayout>
-
-</ScrollView>
+        </ScrollView>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

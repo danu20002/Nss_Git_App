@@ -18,6 +18,7 @@
                 app:cardElevation="15dp"
                 android:layout_margin="20dp"
                 app:cardCornerRadius="10dp">
+
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -27,6 +28,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#0528EA"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:text="Profile Settings"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Please Update data with your Information"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="10dp"/>
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
@@ -108,14 +125,16 @@
                          android:textSize="20sp"
                          android:id="@+id/password_change_profile_settings"
                          android:text="Change Password"
-                         android:layout_margin="20dp"/>
+                         android:layout_marginEnd="20dp"
+                         android:layout_marginBottom="20dp"/>
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Update Data"
                         android:textStyle="bold"
+                        android:textColor="@color/white"
                         android:id="@+id/update_btn_profile_settings"
-                        android:background="@drawable/another_btn_background"
+                        android:background="@drawable/signin_btn_background"
                         android:layout_margin="20dp"
                         />
                 </androidx.appcompat.widget.LinearLayoutCompat>

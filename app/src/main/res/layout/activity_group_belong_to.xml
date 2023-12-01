@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/default_theme"
     tools:context=".Group_belong_to">
 
   <androidx.appcompat.widget.LinearLayoutCompat
@@ -13,7 +14,7 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:textColor="@color/black"
+          android:textColor="@color/white"
           android:textStyle="bold"
           android:text="Groups"
           android:textSize="30sp"
@@ -24,10 +25,12 @@
               android:layout_height="wrap_content"
               app:cardCornerRadius="8dp"
               app:cardElevation="18sp"
-              android:layout_margin="20dp">
+
+              android:layout_margin="15dp">
               <androidx.appcompat.widget.LinearLayoutCompat
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
+                  android:paddingLeft="10dp"
                   android:orientation="vertical">
                   <RadioGroup
                       android:layout_width="match_parent"
@@ -108,9 +111,10 @@
                   <androidx.appcompat.widget.AppCompatButton
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:background="@drawable/btn_background"
+                      android:background="@drawable/signin_btn_background"
                       android:layout_margin="20dp"
                       android:text="SUBMIT"
+                      android:textColor="@color/white"
                       android:id="@+id/group_submit_btn"/>
               </androidx.appcompat.widget.LinearLayoutCompat>
           </androidx.cardview.widget.CardView>

@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="?selectableItemBackground"
     android:layout_marginBottom="5dp"
     android:layout_height="wrap_content">
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="20dp"
     android:layout_margin="5dp">
 
 
@@ -19,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="?attr/selectableItemBackground"
         android:orientation="horizontal"
         >
         <de.hdodenhof.circleimageview.CircleImageView
@@ -109,13 +109,15 @@
 
 
 
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp"-->
-<!--        android:layout_marginTop="12dp"-->
-<!--        android:layout_marginBottom="12dp"-->
-<!--        android:background="@android:color/black" />-->
 
 </androidx.cardview.widget.CardView>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:background="@android:color/black" />
 </LinearLayout>

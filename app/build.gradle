@@ -71,4 +71,8 @@ dependencies {
 
     //lottie
     implementation "com.airbnb.android:lottie:3.4.0"
+    //reactions
+    implementation "com.github.pgreze:android-reactions:1.6"
+    //sheet adder
+    implementation 'com.android.volley:volley:1.2.1'
 }

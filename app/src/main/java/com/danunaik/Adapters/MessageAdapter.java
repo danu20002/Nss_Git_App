@@ -1,9 +1,11 @@
 package com.danunaik.Adapters;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -65,6 +67,7 @@ public class MessageAdapter extends RecyclerView.Adapter {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Messges messges1=messges.get(position);
@@ -135,26 +138,28 @@ public class MessageAdapter extends RecyclerView.Adapter {
 
 
 
-//     viewHolder.send_text.setOnTouchListener(new View.OnTouchListener() {
-//          @Override
-//          public boolean onTouch(View v, MotionEvent event) {
-//              popup.onTouch(v,event);
-//              return false;
-//          }
-//      });
+     viewHolder.send_text.setOnTouchListener(new View.OnTouchListener() {
+          @Override
+          public boolean onTouch(View v, MotionEvent event) {
+              popup.onTouch(v,event);
+              return true;
+          }
+      });
 
         }else {
 
             ReceivedViewHolder viewHolder=(ReceivedViewHolder) holder;
             viewHolder.recived_text.setText(messges1.getMessage());
 
-//      viewHolder.recived_text.setOnTouchListener(new View.OnTouchListener() {
-//          @Override
-//          public boolean onTouch(View v, MotionEvent event) {
-//              popup.onTouch(v,event);
-//              return false;
-//          }
-//      });
+      viewHolder.recived_text.setOnTouchListener(new View.OnTouchListener() {
+          @SuppressLint("ClickableViewAccessibility")
+          @Override
+          public boolean onTouch(View v, MotionEvent event) {
+              popup.onTouch(v,event);
+
+              return true;
+          }
+      });
 
         }
     }
