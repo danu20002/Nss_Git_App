@@ -165,6 +165,7 @@ contact_us_settings.setOnClickListener(new View.OnClickListener() {
                  auth.signOut();
                  startActivity(new Intent(getApplicationContext(),User_login_page.class));
                  overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                 Toast.makeText(Profile_management.this, "Log out Successful", Toast.LENGTH_SHORT).show();
                  finish();
              }
          }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -176,57 +177,6 @@ contact_us_settings.setOnClickListener(new View.OnClickListener() {
          dialog.show();
      }
  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
