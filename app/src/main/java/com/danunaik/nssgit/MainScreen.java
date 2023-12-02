@@ -107,7 +107,7 @@ BottomNavigationView bottom_nav_chats;
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(MainScreen.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

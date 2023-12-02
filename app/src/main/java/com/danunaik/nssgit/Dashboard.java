@@ -118,7 +118,7 @@ database.getReference().child("Users").child(auth.getUid()).addValueEventListene
 
     @Override
     public void onCancelled(@NonNull DatabaseError error) {
-
+        Toast.makeText(Dashboard.this, error.getMessage(), Toast.LENGTH_SHORT).show();
     }
 });
 

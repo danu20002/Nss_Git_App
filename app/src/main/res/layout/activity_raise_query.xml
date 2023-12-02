@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:background="@color/default_theme"
     tools:context=".Raise_query">
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -18,6 +18,7 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="Raise Query"
         />
 
@@ -37,7 +38,7 @@
                 android:text="You have any queries with NSS? if yes then you are in right place. we will solve your query as much as possible"
                 android:textStyle="italic"
                 android:textSize="15sp"
-                android:textColor="#E64A19"
+                android:textColor="#0326E8"
                 android:padding="5dp"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
