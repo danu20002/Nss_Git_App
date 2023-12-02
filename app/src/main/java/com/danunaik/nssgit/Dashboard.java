@@ -235,7 +235,7 @@ database.getReference().child("recents").addValueEventListener(new ValueEventLis
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try{
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.daneshnaik.nssgit")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.danunaik.nssgit")));
                 }catch (Exception e){
                     Toast.makeText(Dashboard.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
