@@ -26,11 +26,11 @@ Technologies used in the project:
 
 *   Java
 *   Android
-*   xml
-*   mysql
-*   firebase
-*   api
-
+*   Xml
+*   Mysql
+*   Firebase
+*   RestApi
+*   Google Sheets
 <h2>💖Like my work?</h2>
 
 If you need ant help Contact me<p>https://cdn.pixabay.com/photo/2017/05/30/04/02/support-2355701_640.jpg</p>
