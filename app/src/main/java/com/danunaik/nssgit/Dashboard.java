@@ -45,7 +45,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
     BottomNavigationView bottom_nav_dashboard;
     FirebaseRemoteConfig remoteConfig;
-    ImageSlider imageSlider;
+    ImageSlider imageSlider,recent_images_slider;
     CardView Our_website_cardview;
   WebView dashboard_our_website;
     ProgressBar progressBar_dashboard;
@@ -69,6 +69,7 @@ public class Dashboard extends AppCompatActivity {
        database=FirebaseDatabase.getInstance();
 
       imageSlider=findViewById(R.id.image_slider_dashboard);
+      recent_images_slider=findViewById(R.id.recent_images_slider);
       ArrayList<SlideModel> slideModels=new ArrayList<>();
 
         slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg", ScaleTypes.FIT));
@@ -83,6 +84,12 @@ public class Dashboard extends AppCompatActivity {
 
         imageSlider.setSlideAnimation(AnimationTypes.BACKGROUND_TO_FOREGROUND);
         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
+
+
+        ArrayList<SlideModel> slideModels1=new ArrayList<>();
+        //slideModels1.add(new SlideModel(url,ScaleTypes.FIT));
+
+
 
 
 
