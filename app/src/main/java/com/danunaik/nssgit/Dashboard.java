@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,7 +13,9 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,6 +45,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import java.util.ArrayList;
+import android.Manifest;
 
 public class Dashboard extends AppCompatActivity {
     BottomNavigationView bottom_nav_dashboard;
@@ -58,6 +63,7 @@ public class Dashboard extends AppCompatActivity {
    ArrayList <recent_activities> recent_activitiesArrayList;
    RecyclerView recyclerView_recent;
    int id=0;
+    private static final int RC_Notification=99;
 
 
     @Override
@@ -72,7 +78,7 @@ public class Dashboard extends AppCompatActivity {
       recent_images_slider=findViewById(R.id.recent_images_slider);
       ArrayList<SlideModel> slideModels=new ArrayList<>();
 
-        slideModels.add(new SlideModel("https://nss--nssklsgit20.repl.co/static/IMG/P6.jpg", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2FSAVE_20230907_185534.jpg?alt=media&token=b8326004-8098-413a-8b4f-6fd6f3ceff83&_gl=1*11wzyys*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODUxOC42MC4wLjA", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_32019pmByGPSMapCamera.jpg?alt=media&token=3ee6cb64-efaf-417e-a19c-7db8f0d5236b&_gl=1*3fcdt7*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODIxNS4yNC4wLjA.", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_31225pmByGPSMapCamera.jpg?alt=media&token=b58e539d-31ba-4227-8860-c6215442332a&_gl=1*xs30tv*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODM1OC4yOS4wLjA.", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/for-additional-purpose.appspot.com/o/nss%20git%2F20230906_30943pmByGPSMapCamera.jpg?alt=media&token=d33a5d31-67a6-4b65-a389-6c5f92841514&_gl=1*h2uik*_ga*MTQ2NjU5MDAwMC4xNjk3NTEwMjgz*_ga_CW55HF8NVT*MTY5Nzc1NjU0Ny41LjEuMTY5Nzc1ODQwNi40Ni4wLjA.", ScaleTypes.FIT));
@@ -89,14 +95,22 @@ public class Dashboard extends AppCompatActivity {
         ArrayList<SlideModel> slideModels1=new ArrayList<>();
         //slideModels1.add(new SlideModel(url,ScaleTypes.FIT));
 
+  /** this is used to make notification request**/
+ String[] permissions={"android.permission.POST_NOTIFICATIONS","android.permission.CAMERA"};
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, permissions, RC_Notification);
+        } else {
 
+        }
+
+/** here it comes to an end**/
 
 
       dashboard_our_website=findViewById(R.id.our_website_webview_dashboard);
         WebSettings settings=dashboard_our_website.getSettings();
         settings.setJavaScriptEnabled(true);
-        dashboard_our_website.loadUrl("https://nss--nssklsgit20.repl.co/");
+        dashboard_our_website.loadUrl("");
 
 
         Our_website_cardview=findViewById(R.id.our_website_cardview);
@@ -106,6 +120,12 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://nss--nssklsgit20.repl.co/")));
             }
         });
+
+
+
+
+
+
 
 
  visit_here=findViewById(R.id.visit_here_dashboard);
@@ -286,10 +306,16 @@ database.getReference().child("recents").addValueEventListener(new ValueEventLis
 
     }
 
-
-
-
-
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == RC_Notification){
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(this, "Allowed", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
 }

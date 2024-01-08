@@ -1,6 +1,7 @@
 package com.danunaik.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.danunaik.Tables.recent_activities;
 import com.danunaik.nssgit.R;
+import com.danunaik.nssgit.recent_activity_webview;
 
 import java.util.ArrayList;
 
@@ -32,6 +34,14 @@ public class RecentActivitiesAdapter extends RecyclerView.Adapter<RecentActiviti
     public void onBindViewHolder(@NonNull RecentActivitiesAdapter.Viewholder holder, int position) {
     recent_activities recent_activites_present=recent_activitiesArrayList.get(position);
     holder.single_recent_activities_textview.setText(recent_activites_present.getText()+"---->Added By NSS GIT");
+     holder.single_recent_activities_textview.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             Intent intent=new Intent(context, recent_activity_webview.class);
+             intent.putExtra("link",recent_activites_present.getLink());
+             context.startActivity(intent);
+         }
+     });
     }
 
     @Override

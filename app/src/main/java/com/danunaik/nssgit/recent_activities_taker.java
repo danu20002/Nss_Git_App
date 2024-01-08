@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class recent_activities_taker extends AppCompatActivity {
-TextInputEditText activity_recent;
+TextInputEditText activity_recent,recent_taker_link;
 AppCompatButton btn_add_activity;
 FirebaseAuth auth;
 FirebaseDatabase database;
@@ -30,8 +30,10 @@ FirebaseDatabase database;
         setContentView(R.layout.activity_recent_activities_taker);
         activity_recent=findViewById(R.id.activity_text);
         btn_add_activity=findViewById(R.id.btn_add_activity);
+        recent_taker_link=findViewById(R.id.recnet_taker_link);
         auth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
+
 
         btn_add_activity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +45,8 @@ FirebaseDatabase database;
                 String activity_text_data=activity_recent.getEditableText().toString();
                 if(!activity_text_data.isEmpty()){
                     String activity_rrecnts_ka_data=activity_recent.getEditableText().toString();
-                    recent_activities recentActivities=new recent_activities(activity_rrecnts_ka_data);
+                    String activity_recent_link_data=recent_taker_link.getEditableText().toString();
+                    recent_activities recentActivities=new recent_activities(activity_rrecnts_ka_data,activity_recent_link_data);
                     database.getReference().child("recents").push().setValue(recentActivities).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -56,7 +59,7 @@ FirebaseDatabase database;
                                     public void run() {
                                         progressDialog.setMessage("Uploaded");
                                         Toast.makeText(recent_activities_taker.this, "Recent activity is added", Toast.LENGTH_SHORT).show();
-                                        progressDialog.dismiss();;
+                                        progressDialog.dismiss();
                                     }
                                 },2000);
 

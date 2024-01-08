@@ -8,6 +8,11 @@ public class recent_activities {
     public recent_activities() {
     }
 
+    public recent_activities(String text, String link) {
+        this.text = text;
+        this.link = link;
+    }
+
     public String getText() {
         return text;
     }
@@ -17,4 +22,14 @@ public class recent_activities {
     }
 
     String text;
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    String link;
 }

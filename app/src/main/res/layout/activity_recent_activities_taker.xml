@@ -26,6 +26,22 @@
                 android:textAlignment="textStart"
                 android:inputType="text|textMultiLine"
                 android:id="@+id/activity_text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+  <com.google.android.material.textfield.TextInputEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Clickable Link"
+      android:textColor="#062AED"
+      android:textStyle="bold"
+      android:textSize="15sp"
+      android:textAlignment="textStart"
+      android:id="@+id/recnet_taker_link"
+      android:inputType="text|textMultiLine"/>
+        </com.google.android.material.textfield.TextInputLayout>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,7 +51,7 @@
                 android:text="ADD activity"
                 android:id="@+id/btn_add_activity"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>
 </RelativeLayout>

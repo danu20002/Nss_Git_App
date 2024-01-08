@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NssGit"
         tools:targetApi="31">
+        <activity
+            android:name=".recent_activity_webview"
+            android:exported="false" />
         <activity
             android:name=".recent_activities_taker"
             android:exported="false" />
